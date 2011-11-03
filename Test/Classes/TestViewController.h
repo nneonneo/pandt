@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreMotion/CoreMotion.h>
 #import <Foundation/Foundation.h>
+#import "VoiceServices.h"
 
 @interface TestViewController : UIViewController {
     IBOutlet UILabel *gyroActiveLabel;
@@ -17,6 +18,7 @@
 
 	CMMotionManager *motionManager;
 	NSOperationQueue* motionQueue;
+    VSSpeechSynthesizer *speechSynth;
 
     BOOL isUpdating;
 }

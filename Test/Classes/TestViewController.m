@@ -7,6 +7,7 @@
 //
 
 #import "TestViewController.h"
+#import "VoiceServices.h"
 
 @implementation TestViewController
 
@@ -18,6 +19,8 @@
         isUpdating = NO;
         [button setTitle:@"Start Motion Updates" forState:UIControlStateNormal];
     } else {
+        [speechSynth startSpeakingString:@"3.141592653"]; 
+
         motionManager.gyroUpdateInterval = 
         motionManager.accelerometerUpdateInterval = 
         motionManager.deviceMotionUpdateInterval = 
@@ -63,12 +66,17 @@
 }
 */
 
-
+- (void) speechSynthesizer:(NSObject *)synth didFinishSpeaking:(BOOL)didFinish withError:(NSError *) error {
+    NSLog(@"Finished speaking %d %@", didFinish, error);
+}
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 	motionManager = [[CMMotionManager alloc] init];
     motionQueue = [[NSOperationQueue alloc] init];
+    speechSynth = [[VSSpeechSynthesizer alloc] init];
+    [speechSynth setDelegate:self];
+
     isUpdating = NO;
 
     [super viewDidLoad];
@@ -106,6 +114,7 @@
 - (void)dealloc {
 	[motionManager release];
     [motionQueue release];
+    [speechSynth release];
 
     [gyroActiveLabel release];
     [accelActiveLabel release];
