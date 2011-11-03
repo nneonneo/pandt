@@ -11,16 +11,16 @@
 #import <Foundation/Foundation.h>
 
 @interface TestViewController : UIViewController {
-	IBOutlet UILabel *gyroActiveLabel;
-	IBOutlet UILabel *accelActiveLabel;
-	IBOutlet UIButton *gyroButton;
-	IBOutlet UIButton *accelButton;
+    IBOutlet UILabel *gyroActiveLabel;
+    IBOutlet UILabel *accelActiveLabel;
+    IBOutlet UILabel *deviceActiveLabel;
+
 	CMMotionManager *motionManager;
-	NSOperationQueue* gyroQueue;
-	NSOperationQueue* accelQueue;
+	NSOperationQueue* motionQueue;
+
+    BOOL isUpdating;
 }
 
--(IBAction)toggleGyroUpdates;
--(IBAction)toggleAccelUpdates;
-@end
+- (IBAction)toggleUpdates:(UIButton *)button;
 
+@end

@@ -10,28 +10,40 @@
 
 @implementation TestViewController
 
--(IBAction)toggleGyroUpdates {
-	if (![motionManager isGyroActive]) {
-		[motionManager startGyroUpdatesToQueue: gyroQueue withHandler:^( CMGyroData* gyroData, NSError* error ) {
-			gyroActiveLabel.text = [NSString stringWithFormat:@"%0.1f,%0.1f,%0.1f",gyroData.rotationRate.x,gyroData.rotationRate.y,gyroData.rotationRate.z];
-		}];
-		[gyroButton setTitle:@"Stop Gyro" forState:UIControlStateNormal];
-	} else {
-		[motionManager stopGyroUpdates];
-		[gyroButton setTitle:@"Start Gyro" forState:UIControlStateNormal];
-	}
-}
+- (IBAction)toggleUpdates:(UIButton *)button {
+    if(isUpdating) {
+        [motionManager stopGyroUpdates];
+        [motionManager stopAccelerometerUpdates];
+        [motionManager stopDeviceMotionUpdates];
+        isUpdating = NO;
+        [button setTitle:@"Start Motion Updates" forState:UIControlStateNormal];
+    } else {
+        motionManager.gyroUpdateInterval = 
+        motionManager.accelerometerUpdateInterval = 
+        motionManager.deviceMotionUpdateInterval = 
+        0.020; // 20ms
 
--(IBAction)toggleAccelUpdates {
-	if (![motionManager isAccelerometerActive]) {
-		[motionManager startAccelerometerUpdatesToQueue: accelQueue withHandler:^( CMAccelerometerData* accelerometerData, NSError* error) {
-			accelActiveLabel.text = [NSString stringWithFormat:@"%0.1f,%0.1f,%0.1f",accelerometerData.acceleration.x,accelerometerData.acceleration.y,accelerometerData.acceleration.z];
+        [motionManager startGyroUpdatesToQueue:motionQueue withHandler:^( CMGyroData* gyroData, NSError* error ) {
+            CMRotationRate rate = gyroData.rotationRate;
+            NSString *label = [NSString stringWithFormat:@"%0.1f, %0.1f, %0.1f", rate.x, rate.y, rate.z];
+            [gyroActiveLabel performSelectorOnMainThread: @selector(setText:) withObject:label waitUntilDone:YES];
 		}];
-		[accelButton setTitle:@"Stop Accel" forState:UIControlStateNormal];
-	} else {
-		[motionManager stopAccelerometerUpdates];
-		[accelButton setTitle:@"Start Accel" forState:UIControlStateNormal];
-	}
+
+        [motionManager startAccelerometerUpdatesToQueue:motionQueue withHandler:^( CMAccelerometerData* accelerometerData, NSError* error) {
+            CMAcceleration accel = accelerometerData.acceleration;
+			NSString *label = [NSString stringWithFormat:@"%0.1f, %0.1f, %0.1f", accel.x, accel.y, accel.z];
+            [accelActiveLabel performSelectorOnMainThread: @selector(setText:) withObject:label waitUntilDone:YES];
+		}];
+
+        [motionManager startDeviceMotionUpdatesUsingReferenceFrame:CMAttitudeReferenceFrameXArbitraryZVertical toQueue:motionQueue withHandler:^(CMDeviceMotion* motionData, NSError* error) {
+            CMAttitude *attitude = motionData.attitude;
+            NSString *label = [NSString stringWithFormat:@"%0.1f, %0.1f, %0.1f", attitude.roll, attitude.pitch, attitude.yaw];
+            [deviceActiveLabel performSelectorOnMainThread: @selector(setText:) withObject:label waitUntilDone:YES];
+        }];
+
+        isUpdating = YES;
+        [button setTitle:@"Stop Motion Updates" forState:UIControlStateNormal];
+    }
 }
 
 /*
@@ -56,8 +68,9 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 	motionManager = [[CMMotionManager alloc] init];
-	gyroQueue = [[NSOperationQueue alloc] init];
-	accelQueue = [[NSOperationQueue	alloc] init];
+    motionQueue = [[NSOperationQueue alloc] init];
+    isUpdating = NO;
+
     [super viewDidLoad];
 }
 
@@ -79,6 +92,12 @@
 }
 
 - (void)viewDidUnload {
+    [gyroActiveLabel release];
+    gyroActiveLabel = nil;
+    [accelActiveLabel release];
+    accelActiveLabel = nil;
+    [deviceActiveLabel release];
+    deviceActiveLabel = nil;
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
 }
@@ -86,9 +105,12 @@
 
 - (void)dealloc {
 	[motionManager release];
-	[gyroQueue release];
-	[accelQueue release];
+    [motionQueue release];
+
+    [gyroActiveLabel release];
+    [accelActiveLabel release];
+    [deviceActiveLabel release];
+
     [super dealloc];
 }
-
 @end
