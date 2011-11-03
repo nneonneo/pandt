@@ -142,7 +142,7 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
     }
     
     // reset for next calibration
-    firstCalibrationReading != kNoReadingValue;
+    firstCalibrationReading = kNoReadingValue;
 }
 
 

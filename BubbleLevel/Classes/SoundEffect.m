@@ -70,7 +70,7 @@ Copyright (C) 2010 Apple Inc. All Rights Reserved.
             if (error == kAudioServicesNoError) { // success
                 _soundID = aSoundID;
             } else {
-                NSLog(@"Error %d loading sound at path: %@", error, path);
+                NSLog(@"Error %ld loading sound at path: %@", error, path);
                 [self release], self = nil;
             }
         } else {
