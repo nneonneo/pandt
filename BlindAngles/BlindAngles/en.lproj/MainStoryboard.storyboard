@@ -1,20 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C74" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C74" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="eIO-Dy-jlt">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
     </dependencies>
     <scenes>
+        <scene sceneID="Lee-JC-Erz">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dcr-lF-5V1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" id="eIO-Dy-jlt" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DnH-vX-fjG">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="fqq-Oq-Ujc"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-1327" y="356"/>
+        </scene>
         <scene sceneID="5">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
                 <viewController id="2" customClass="AngleTypeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PDY-gO-Vi5">
-                                <rect key="frame" x="5" y="11" width="310" height="210"/>
+                                <rect key="frame" x="5" y="11" width="310" height="185"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="36"/>
                                 <state key="normal" title="Bevel">
@@ -28,11 +42,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="eT3-7l-b8c" kind="modal" id="sAQ-Uf-M8p"/>
+                                    <segue destination="eT3-7l-b8c" kind="push" id="7xT-JI-BZK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wou-yR-KmD">
-                                <rect key="frame" x="5" y="229" width="310" height="220"/>
+                                <rect key="frame" x="5" y="204" width="310" height="185"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="36"/>
                                 <state key="normal" title="Miter">
@@ -46,49 +60,31 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="eT3-7l-b8c" kind="modal" id="bHR-4v-rse"/>
+                                    <segue destination="eT3-7l-b8c" kind="push" id="zU0-82-Z7e"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="s0w-3N-ajg"/>
+                    <navigationItem key="navigationItem" title="Angle Type" id="s0w-3N-ajg"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-642" y="284"/>
+            <point key="canvasLocation" x="-794" y="356"/>
         </scene>
         <scene sceneID="DkB-Uk-VRD">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dea-9p-uwA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="eT3-7l-b8c" customClass="InputTypeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HAj-Zz-Clx">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="kOH-HA-uq1">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LUz-w2-411">
-                                        <rect key="frame" x="5" y="8" width="98" height="54"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
-                                        <state key="normal" title="Back">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="disabled">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="2" kind="modal" id="0PJ-0b-wdk"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Hy5-yd-lOw">
-                                        <rect key="frame" x="5" y="70" width="310" height="176"/>
+                                        <rect key="frame" x="5" y="11" width="310" height="185"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="24"/>
                                         <state key="normal" title="Enter Angle">
@@ -102,11 +98,11 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="xkN-MO-dEw" kind="modal" id="CGG-lt-xgt"/>
+                                            <segue destination="xkN-MO-dEw" kind="push" id="WJr-vY-zVB"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="m78-NG-3Pe">
-                                        <rect key="frame" x="5" y="254" width="310" height="176"/>
+                                        <rect key="frame" x="5" y="204" width="310" height="185"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="24"/>
                                         <state key="normal" title="Measure Angle">
@@ -120,7 +116,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="0kA-UG-d9b" kind="modal" id="YOd-mV-BrI"/>
+                                            <segue destination="0kA-UG-d9b" kind="push" id="LcE-2o-MSc"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -129,25 +125,25 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="90m-Ce-ICh"/>
+                    <navigationItem key="navigationItem" title="Angle Mode" id="90m-Ce-ICh"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-211" y="257"/>
+            <point key="canvasLocation" x="-247" y="356"/>
         </scene>
         <scene sceneID="jkm-M0-ejT">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iCf-bq-9as" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="xkN-MO-dEw" customClass="AngleEntryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uc1-GB-wPa">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="iaI-gl-ujD">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oSr-rK-R1h">
-                                        <rect key="frame" x="20" y="150" width="91" height="70"/>
+                                        <rect key="frame" x="20" y="99" width="91" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <accessibility key="accessibilityConfiguration" hint="" label="1">
                                             <accessibilityTraits key="traits" none="YES" keyboardKey="YES"/>
@@ -164,26 +160,8 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Dgx-0p-8cz">
-                                        <rect key="frame" x="20" y="14" width="84" height="49"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
-                                        <state key="normal" title="Back">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="disabled">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="eT3-7l-b8c" kind="modal" id="ri5-pB-hYJ"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Mc0-HC-cYL">
-                                        <rect key="frame" x="210" y="150" width="90" height="70"/>
+                                        <rect key="frame" x="210" y="99" width="90" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" none="YES" keyboardKey="YES"/>
@@ -201,7 +179,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="B0u-oP-MCj">
-                                        <rect key="frame" x="210" y="71" width="90" height="76"/>
+                                        <rect key="frame" x="210" y="20" width="90" height="76"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
                                         <state key="normal" title="Start">
@@ -215,11 +193,11 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="iSi-hG-mph" kind="modal" id="etq-1v-Rdf"/>
+                                            <segue destination="iSi-hG-mph" kind="push" id="qjv-pj-2xs"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="I6Q-Oe-nkH">
-                                        <rect key="frame" x="116" y="150" width="90" height="70"/>
+                                        <rect key="frame" x="116" y="99" width="90" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" none="YES" keyboardKey="YES"/>
@@ -237,7 +215,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Mpt-6y-otX">
-                                        <rect key="frame" x="20" y="223" width="91" height="70"/>
+                                        <rect key="frame" x="20" y="172" width="91" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" none="YES" keyboardKey="YES"/>
@@ -255,7 +233,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="J63-jx-NfM">
-                                        <rect key="frame" x="210" y="223" width="90" height="70"/>
+                                        <rect key="frame" x="210" y="172" width="90" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" none="YES" keyboardKey="YES"/>
@@ -273,7 +251,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qgO-0g-aye">
-                                        <rect key="frame" x="115" y="223" width="91" height="70"/>
+                                        <rect key="frame" x="115" y="172" width="91" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" none="YES" keyboardKey="YES"/>
@@ -291,7 +269,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6dY-dO-eFY">
-                                        <rect key="frame" x="20" y="296" width="91" height="70"/>
+                                        <rect key="frame" x="20" y="245" width="91" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" none="YES" keyboardKey="YES"/>
@@ -309,7 +287,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8DZ-o4-lhf">
-                                        <rect key="frame" x="210" y="296" width="90" height="70"/>
+                                        <rect key="frame" x="210" y="245" width="90" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" none="YES" keyboardKey="YES"/>
@@ -327,7 +305,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8AO-WR-xj2">
-                                        <rect key="frame" x="116" y="296" width="90" height="70"/>
+                                        <rect key="frame" x="116" y="245" width="90" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" none="YES" keyboardKey="YES"/>
@@ -345,7 +323,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bq2-Ch-8Z2">
-                                        <rect key="frame" x="20" y="370" width="91" height="70"/>
+                                        <rect key="frame" x="20" y="319" width="91" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <accessibility key="accessibilityConfiguration" label="dot">
                                             <accessibilityTraits key="traits" none="YES" keyboardKey="YES"/>
@@ -363,7 +341,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WjO-gI-EEC">
-                                        <rect key="frame" x="210" y="370" width="90" height="70"/>
+                                        <rect key="frame" x="210" y="319" width="90" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <accessibility key="accessibilityConfiguration" label="Delete">
                                             <accessibilityTraits key="traits" none="YES" keyboardKey="YES"/>
@@ -381,7 +359,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="epo-9n-hRw">
-                                        <rect key="frame" x="116" y="369" width="90" height="71"/>
+                                        <rect key="frame" x="116" y="318" width="90" height="71"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" none="YES" keyboardKey="YES"/>
@@ -399,9 +377,10 @@
                                         </state>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="Xm4-iM-jLr">
-                                        <rect key="frame" x="20" y="71" width="186" height="76"/>
+                                        <rect key="frame" x="20" y="20" width="186" height="76"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <accessibility key="accessibilityConfiguration" label="0 degrees">
+                                        <color key="backgroundColor" red="0.84239130434782605" green="0.84239130434782605" blue="0.84239130434782605" alpha="1" colorSpace="calibratedRGB"/>
+                                        <accessibility key="accessibilityConfiguration" label="Entered Angle: 0 degrees">
                                             <accessibilityTraits key="traits" none="YES" summaryElement="YES"/>
                                         </accessibility>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="24"/>
@@ -414,28 +393,51 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Enter Angle" id="Orj-C9-cjl"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="292" y="24"/>
+            <point key="canvasLocation" x="292" y="32"/>
         </scene>
         <scene sceneID="Ign-ED-fns">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pvh-zi-pMj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="iSi-hG-mph" customClass="TargetAngleViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eev-vH-bZC">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="uq3-hn-obf">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Current: 55.2" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="06U-bF-Oqw">
+                                        <rect key="frame" x="5" y="102" width="310" height="81"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" label="Current Angle: 55 point 2 degrees">
+                                            <accessibilityTraits key="traits" none="YES" staticText="YES" updatesFrequently="YES"/>
+                                        </accessibility>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="36"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Target: 12.5" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="IXL-xL-8AR">
+                                        <rect key="frame" x="10" y="20" width="310" height="81"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" label="Target Angle: 12 point 5 degrees">
+                                            <accessibilityTraits key="traits" none="YES" staticText="YES" updatesFrequently="YES"/>
+                                        </accessibility>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="36"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ity-Ic-WJW">
-                                <rect key="frame" x="10" y="10" width="84" height="49"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="coi-Sn-xw4">
+                                <rect key="frame" x="10" y="203" width="310" height="185"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
-                                <state key="normal" title="Back">
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="24"/>
+                                <state key="normal" title="Go to main menu">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -446,48 +448,31 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="xkN-MO-dEw" kind="modal" id="EjP-fV-y4Z"/>
+                                    <action selector="goToMainMenu" destination="0kA-UG-d9b" eventType="touchUpInside" id="IBn-RK-WAu"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Target Angle" id="J86-Dy-Yck"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="877" y="221"/>
+            <point key="canvasLocation" x="899" y="32"/>
         </scene>
         <scene sceneID="Hd7-vE-gjc">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qRw-9i-N3o" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="0kA-UG-d9b" customClass="AngleMeasureViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z0W-5o-EMi">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="ubl-tf-Z4L">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tSS-8K-pnA">
-                                        <rect key="frame" x="5" y="9" width="84" height="49"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
-                                        <state key="normal" title="Back">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="disabled">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="eT3-7l-b8c" kind="modal" id="FZH-h4-iKQ"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="u33-eW-v1R">
-                                        <rect key="frame" x="5" y="246" width="310" height="204"/>
+                                        <rect key="frame" x="5" y="204" width="310" height="185"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="24"/>
                                         <state key="normal" title="Go to main menu">
@@ -501,13 +486,13 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="2" kind="modal" id="KMj-zx-HBX"/>
+                                            <action selector="goToMainMenu" destination="0kA-UG-d9b" eventType="touchUpInside" id="kL0-rV-uO4"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="55.2" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="yz3-ha-WUo">
-                                        <rect key="frame" x="5" y="66" width="310" height="172"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Current: 55.2" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="yz3-ha-WUo">
+                                        <rect key="frame" x="5" y="11" width="310" height="185"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <accessibility key="accessibilityConfiguration" label="55 point 2 degrees">
+                                        <accessibility key="accessibilityConfiguration" label="Current angle: 55 point 2 degrees">
                                             <accessibilityTraits key="traits" none="YES" staticText="YES" updatesFrequently="YES"/>
                                         </accessibility>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="36"/>
@@ -520,9 +505,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Measure Angle" id="d7m-e1-yPX"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="240" y="634"/>
+            <point key="canvasLocation" x="292" y="708"/>
         </scene>
     </scenes>
     <classes>
@@ -531,6 +517,9 @@
         </class>
         <class className="AngleMeasureViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AngleMeasureViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="goToMainMenu"/>
+            </relationships>
         </class>
         <class className="AngleTypeViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AngleTypeViewController.h"/>
@@ -547,4 +536,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="zU0-82-Z7e"/>
+    </inferredMetricsTieBreakers>
 </document>

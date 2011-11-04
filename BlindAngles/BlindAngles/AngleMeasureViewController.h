@@ -10,4 +10,6 @@
 
 @interface AngleMeasureViewController : UIViewController
 
+- (IBAction)goToMainMenu;
+
 @end

@@ -57,4 +57,10 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)goToMainMenu {
+    UIWindow *window = [[self view] window];
+    /* This will crash if you don't have a navigation controller at the root! */
+    UINavigationController *root_controller = (UINavigationController *)[window rootViewController];
+    [root_controller popToRootViewControllerAnimated:YES];
+}
 @end
