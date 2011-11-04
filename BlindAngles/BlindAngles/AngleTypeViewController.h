@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  AngleTypeViewController.h
 //  BlindAngles
 //
 //  Created by Robert Xiao on 11/4/11.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface AngleTypeViewController : UIViewController
 
 @end
