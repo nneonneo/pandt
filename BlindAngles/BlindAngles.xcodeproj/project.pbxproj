@@ -1,0 +1,281 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7FA1B6A114645AE9007B3BC0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FA1B6A014645AE9007B3BC0 /* UIKit.framework */; };
+		7FA1B6A314645AE9007B3BC0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FA1B6A214645AE9007B3BC0 /* Foundation.framework */; };
+		7FA1B6A514645AE9007B3BC0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FA1B6A414645AE9007B3BC0 /* CoreGraphics.framework */; };
+		7FA1B6AB14645AE9007B3BC0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7FA1B6A914645AE9007B3BC0 /* InfoPlist.strings */; };
+		7FA1B6AD14645AE9007B3BC0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA1B6AC14645AE9007B3BC0 /* main.m */; };
+		7FA1B6B114645AE9007B3BC0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA1B6B014645AE9007B3BC0 /* AppDelegate.m */; };
+		7FA1B6B414645AE9007B3BC0 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FA1B6B214645AE9007B3BC0 /* MainStoryboard.storyboard */; };
+		7FA1B6B714645AE9007B3BC0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA1B6B614645AE9007B3BC0 /* ViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7FA1B69C14645AE9007B3BC0 /* BlindAngles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlindAngles.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FA1B6A014645AE9007B3BC0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7FA1B6A214645AE9007B3BC0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7FA1B6A414645AE9007B3BC0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7FA1B6A814645AE9007B3BC0 /* BlindAngles-Info.plist */ = {isa = PBXFileReference; path = "BlindAngles-Info.plist"; sourceTree = "<group>"; };
+		7FA1B6AA14645AE9007B3BC0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7FA1B6AC14645AE9007B3BC0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7FA1B6AE14645AE9007B3BC0 /* BlindAngles-Prefix.pch */ = {isa = PBXFileReference; path = "BlindAngles-Prefix.pch"; sourceTree = "<group>"; };
+		7FA1B6AF14645AE9007B3BC0 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		7FA1B6B014645AE9007B3BC0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7FA1B6B314645AE9007B3BC0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		7FA1B6B514645AE9007B3BC0 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		7FA1B6B614645AE9007B3BC0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7FA1B69914645AE9007B3BC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FA1B6A114645AE9007B3BC0 /* UIKit.framework in Frameworks */,
+				7FA1B6A314645AE9007B3BC0 /* Foundation.framework in Frameworks */,
+				7FA1B6A514645AE9007B3BC0 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7FA1B69114645AE9007B3BC0 = {
+			isa = PBXGroup;
+			children = (
+				7FA1B6A614645AE9007B3BC0 /* BlindAngles */,
+				7FA1B69F14645AE9007B3BC0 /* Frameworks */,
+				7FA1B69D14645AE9007B3BC0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7FA1B69D14645AE9007B3BC0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7FA1B69C14645AE9007B3BC0 /* BlindAngles.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7FA1B69F14645AE9007B3BC0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7FA1B6A014645AE9007B3BC0 /* UIKit.framework */,
+				7FA1B6A214645AE9007B3BC0 /* Foundation.framework */,
+				7FA1B6A414645AE9007B3BC0 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7FA1B6A614645AE9007B3BC0 /* BlindAngles */ = {
+			isa = PBXGroup;
+			children = (
+				7FA1B6AF14645AE9007B3BC0 /* AppDelegate.h */,
+				7FA1B6B014645AE9007B3BC0 /* AppDelegate.m */,
+				7FA1B6B214645AE9007B3BC0 /* MainStoryboard.storyboard */,
+				7FA1B6B514645AE9007B3BC0 /* ViewController.h */,
+				7FA1B6B614645AE9007B3BC0 /* ViewController.m */,
+				7FA1B6A714645AE9007B3BC0 /* Supporting Files */,
+			);
+			path = BlindAngles;
+			sourceTree = "<group>";
+		};
+		7FA1B6A714645AE9007B3BC0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7FA1B6A814645AE9007B3BC0 /* BlindAngles-Info.plist */,
+				7FA1B6A914645AE9007B3BC0 /* InfoPlist.strings */,
+				7FA1B6AC14645AE9007B3BC0 /* main.m */,
+				7FA1B6AE14645AE9007B3BC0 /* BlindAngles-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7FA1B69B14645AE9007B3BC0 /* BlindAngles */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FA1B6BA14645AE9007B3BC0 /* Build configuration list for PBXNativeTarget "BlindAngles" */;
+			buildPhases = (
+				7FA1B69814645AE9007B3BC0 /* Sources */,
+				7FA1B69914645AE9007B3BC0 /* Frameworks */,
+				7FA1B69A14645AE9007B3BC0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BlindAngles;
+			productName = BlindAngles;
+			productReference = 7FA1B69C14645AE9007B3BC0 /* BlindAngles.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7FA1B69314645AE9007B3BC0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 7FA1B69614645AE9007B3BC0 /* Build configuration list for PBXProject "BlindAngles" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7FA1B69114645AE9007B3BC0;
+			productRefGroup = 7FA1B69D14645AE9007B3BC0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7FA1B69B14645AE9007B3BC0 /* BlindAngles */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7FA1B69A14645AE9007B3BC0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FA1B6AB14645AE9007B3BC0 /* InfoPlist.strings in Resources */,
+				7FA1B6B414645AE9007B3BC0 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7FA1B69814645AE9007B3BC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FA1B6AD14645AE9007B3BC0 /* main.m in Sources */,
+				7FA1B6B114645AE9007B3BC0 /* AppDelegate.m in Sources */,
+				7FA1B6B714645AE9007B3BC0 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7FA1B6A914645AE9007B3BC0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FA1B6AA14645AE9007B3BC0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7FA1B6B214645AE9007B3BC0 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FA1B6B314645AE9007B3BC0 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7FA1B6B814645AE9007B3BC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7FA1B6B914645AE9007B3BC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7FA1B6BB14645AE9007B3BC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BlindAngles/BlindAngles-Prefix.pch";
+				INFOPLIST_FILE = "BlindAngles/BlindAngles-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7FA1B6BC14645AE9007B3BC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BlindAngles/BlindAngles-Prefix.pch";
+				INFOPLIST_FILE = "BlindAngles/BlindAngles-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7FA1B69614645AE9007B3BC0 /* Build configuration list for PBXProject "BlindAngles" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FA1B6B814645AE9007B3BC0 /* Debug */,
+				7FA1B6B914645AE9007B3BC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7FA1B6BA14645AE9007B3BC0 /* Build configuration list for PBXNativeTarget "BlindAngles" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FA1B6BB14645AE9007B3BC0 /* Debug */,
+				7FA1B6BC14645AE9007B3BC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7FA1B69314645AE9007B3BC0 /* Project object */;
+}
