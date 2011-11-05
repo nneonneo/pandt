@@ -159,6 +159,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressDigitKey:" destination="xkN-MO-dEw" eventType="touchUpInside" id="YDd-Lr-ASE"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Mc0-HC-cYL">
                                         <rect key="frame" x="210" y="99" width="90" height="70"/>
@@ -177,6 +180,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressDigitKey:" destination="xkN-MO-dEw" eventType="touchUpInside" id="8qk-db-sAN"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="B0u-oP-MCj">
                                         <rect key="frame" x="210" y="20" width="90" height="76"/>
@@ -213,6 +219,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressDigitKey:" destination="xkN-MO-dEw" eventType="touchUpInside" id="4hl-ZQ-ndq"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Mpt-6y-otX">
                                         <rect key="frame" x="20" y="172" width="91" height="70"/>
@@ -231,6 +240,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressDigitKey:" destination="xkN-MO-dEw" eventType="touchUpInside" id="Cy9-Cn-g1p"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="J63-jx-NfM">
                                         <rect key="frame" x="210" y="172" width="90" height="70"/>
@@ -249,6 +261,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressDigitKey:" destination="xkN-MO-dEw" eventType="touchUpInside" id="uU3-ko-0rX"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qgO-0g-aye">
                                         <rect key="frame" x="115" y="172" width="91" height="70"/>
@@ -267,6 +282,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressDigitKey:" destination="xkN-MO-dEw" eventType="touchUpInside" id="JDH-eB-LQx"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6dY-dO-eFY">
                                         <rect key="frame" x="20" y="245" width="91" height="70"/>
@@ -285,6 +303,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressDigitKey:" destination="xkN-MO-dEw" eventType="touchUpInside" id="qdH-tj-BC4"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8DZ-o4-lhf">
                                         <rect key="frame" x="210" y="245" width="90" height="70"/>
@@ -303,6 +324,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressDigitKey:" destination="xkN-MO-dEw" eventType="touchUpInside" id="VK8-wL-sWS"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8AO-WR-xj2">
                                         <rect key="frame" x="116" y="245" width="90" height="70"/>
@@ -321,6 +345,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressDigitKey:" destination="xkN-MO-dEw" eventType="touchUpInside" id="Mf7-dW-Ss8"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bq2-Ch-8Z2">
                                         <rect key="frame" x="20" y="319" width="91" height="70"/>
@@ -339,6 +366,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressDotKey:" destination="xkN-MO-dEw" eventType="touchUpInside" id="eyf-gW-AC2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WjO-gI-EEC">
                                         <rect key="frame" x="210" y="319" width="90" height="70"/>
@@ -357,6 +387,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressDeleteKey:" destination="xkN-MO-dEw" eventType="touchUpInside" id="Flf-DB-ltt"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="epo-9n-hRw">
                                         <rect key="frame" x="116" y="318" width="90" height="71"/>
@@ -375,6 +408,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressDigitKey:" destination="xkN-MO-dEw" eventType="touchUpInside" id="C56-Em-gCz"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="Xm4-iM-jLr">
                                         <rect key="frame" x="20" y="20" width="186" height="76"/>
@@ -394,6 +430,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Enter Angle" id="Orj-C9-cjl"/>
+                    <connections>
+                        <outlet property="inputLabel" destination="Xm4-iM-jLr" id="IyU-sn-aGt"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="292" y="32"/>
@@ -514,6 +553,12 @@
     <classes>
         <class className="AngleEntryViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AngleEntryViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="pressDeleteKey:" candidateClass="UIButton"/>
+                <relationship kind="action" name="pressDigitKey:" candidateClass="UIButton"/>
+                <relationship kind="action" name="pressDotKey:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="inputLabel" candidateClass="UILabel"/>
+            </relationships>
         </class>
         <class className="AngleMeasureViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AngleMeasureViewController.h"/>

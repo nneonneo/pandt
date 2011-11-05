@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AngleEntryViewController : UIViewController
+@interface AngleEntryViewController : UIViewController {
+    __weak IBOutlet UILabel *inputLabel;
+}
 
+- (void)updateLabel:(NSString *)labelText;
+- (IBAction)pressDigitKey:(UIButton *)sender;
+- (IBAction)pressDotKey:(UIButton *)sender;
+- (IBAction)pressDeleteKey:(UIButton *)sender;
 @end
