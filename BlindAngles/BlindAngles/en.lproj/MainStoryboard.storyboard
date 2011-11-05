@@ -532,10 +532,10 @@
                                             <action selector="goToMainMenu" destination="0kA-UG-d9b" eventType="touchUpInside" id="kL0-rV-uO4"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Current: 55.2" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="yz3-ha-WUo">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Current: 0.0" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="yz3-ha-WUo">
                                         <rect key="frame" x="5" y="11" width="310" height="185"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <accessibility key="accessibilityConfiguration" label="Current angle: 55 point 2 degrees">
+                                        <accessibility key="accessibilityConfiguration" label="Current angle: 0 point 0 degrees">
                                             <accessibilityTraits key="traits" none="YES" staticText="YES" updatesFrequently="YES"/>
                                         </accessibility>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="36"/>
