@@ -19,6 +19,8 @@
 		7FA1B7021464744D007B3BC0 /* AngleEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA1B7011464744D007B3BC0 /* AngleEntryViewController.m */; };
 		7FA1B7051464746A007B3BC0 /* AngleMeasureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA1B7041464746A007B3BC0 /* AngleMeasureViewController.m */; };
 		7FA1B70814647482007B3BC0 /* TargetAngleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA1B70714647482007B3BC0 /* TargetAngleViewController.m */; };
+		7FA1B71C1465AE46007B3BC0 /* MotionModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA1B71B1465AE46007B3BC0 /* MotionModelController.m */; };
+		7FA1B71E1465B2F4007B3BC0 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FA1B71D1465B2F4007B3BC0 /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,9 @@
 		7FA1B7041464746A007B3BC0 /* AngleMeasureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AngleMeasureViewController.m; sourceTree = "<group>"; };
 		7FA1B70614647482007B3BC0 /* TargetAngleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetAngleViewController.h; sourceTree = "<group>"; };
 		7FA1B70714647482007B3BC0 /* TargetAngleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetAngleViewController.m; sourceTree = "<group>"; };
+		7FA1B71A1465AE46007B3BC0 /* MotionModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionModelController.h; sourceTree = "<group>"; };
+		7FA1B71B1465AE46007B3BC0 /* MotionModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionModelController.m; sourceTree = "<group>"; };
+		7FA1B71D1465B2F4007B3BC0 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FA1B71E1465B2F4007B3BC0 /* CoreMotion.framework in Frameworks */,
 				7FA1B6A114645AE9007B3BC0 /* UIKit.framework in Frameworks */,
 				7FA1B6A314645AE9007B3BC0 /* Foundation.framework in Frameworks */,
 				7FA1B6A514645AE9007B3BC0 /* CoreGraphics.framework in Frameworks */,
@@ -81,6 +87,7 @@
 		7FA1B69F14645AE9007B3BC0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7FA1B71D1465B2F4007B3BC0 /* CoreMotion.framework */,
 				7FA1B6A014645AE9007B3BC0 /* UIKit.framework */,
 				7FA1B6A214645AE9007B3BC0 /* Foundation.framework */,
 				7FA1B6A414645AE9007B3BC0 /* CoreGraphics.framework */,
@@ -101,6 +108,8 @@
 				7FA1B70714647482007B3BC0 /* TargetAngleViewController.m */,
 				7FA1B7031464746A007B3BC0 /* AngleMeasureViewController.h */,
 				7FA1B7041464746A007B3BC0 /* AngleMeasureViewController.m */,
+				7FA1B71A1465AE46007B3BC0 /* MotionModelController.h */,
+				7FA1B71B1465AE46007B3BC0 /* MotionModelController.m */,
 				7FA1B6AF14645AE9007B3BC0 /* AppDelegate.h */,
 				7FA1B6B014645AE9007B3BC0 /* AppDelegate.m */,
 				7FA1B6B214645AE9007B3BC0 /* MainStoryboard.storyboard */,
@@ -189,6 +198,7 @@
 				7FA1B7021464744D007B3BC0 /* AngleEntryViewController.m in Sources */,
 				7FA1B7051464746A007B3BC0 /* AngleMeasureViewController.m in Sources */,
 				7FA1B70814647482007B3BC0 /* TargetAngleViewController.m in Sources */,
+				7FA1B71C1465AE46007B3BC0 /* MotionModelController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
