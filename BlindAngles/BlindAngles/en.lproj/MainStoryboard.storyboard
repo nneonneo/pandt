@@ -549,6 +549,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Measure Angle" id="d7m-e1-yPX"/>
+                    <connections>
+                        <outlet property="angleLabel" destination="yz3-ha-WUo" id="ows-S5-iLU"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="292" y="708"/>
@@ -568,6 +571,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AngleMeasureViewController.h"/>
             <relationships>
                 <relationship kind="action" name="goToMainMenu"/>
+                <relationship kind="outlet" name="angleLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="AngleTypeViewController" superclassName="UIViewController">

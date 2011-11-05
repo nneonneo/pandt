@@ -7,6 +7,8 @@
 //
 
 #import "AngleEntryViewController.h"
+#import "MotionModelController.h"
+#import "NumberFormatter.h"
 
 @implementation AngleEntryViewController
 
@@ -58,29 +60,14 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    float targetAngle = inputLabel.text.floatValue;
-    NSLog(@"Target angle: %.1f", targetAngle);
+    [MotionModelController getInstance].targetAngle = inputLabel.text.floatValue;
 }
 
 /* TODO: localize decimal formatting for non-English locales */
 - (void)updateLabel:(NSString *)labelText {
     inputLabel.text = labelText;
-    if(labelText.floatValue == 1.0) {
-        inputLabel.accessibilityLabel = @"Entered angle: 1 degree";
-    } else {
-        if([labelText length] == 0) {
-            NSLog(@"Invalid label text received...");
-            inputLabel.text = @"0";
-            return;
-        }
-        if([labelText characterAtIndex:[labelText length] - 1] == '.') {
-            /* Strip off trailing dot for accessibility label */
-            labelText = [labelText substringToIndex:[labelText length] - 1];
-        }
-        /* Replace "." (spoken as 'dot') with " point " */
-        labelText = [labelText stringByReplacingOccurrencesOfString:@"." withString:@" point "];
-        inputLabel.accessibilityLabel = [NSString stringWithFormat:@"Entered angle: %@ degrees", labelText];
-    }
+    NSString *text = [NumberFormatter getAccessibilityLabelForAngleLabel:labelText];
+    inputLabel.accessibilityLabel = [@"Entered angle: " stringByAppendingString:text];
 }
 
 - (IBAction)pressDigitKey:(UIButton *)sender {

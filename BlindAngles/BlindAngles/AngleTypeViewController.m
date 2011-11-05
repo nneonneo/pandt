@@ -7,6 +7,7 @@
 //
 
 #import "AngleTypeViewController.h"
+#import "MotionModelController.h"
 
 @implementation AngleTypeViewController
 
@@ -60,12 +61,13 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    MotionModelController *motionModel = [MotionModelController getInstance];
     if(sender == bevelButton) {
-        NSLog(@"Bevel button!");
+        motionModel.angleType = MotionModelAngleTypeBezel;
     } else if(sender == miterButton) {
-        NSLog(@"Miter button!");
+        motionModel.angleType = MotionModelAngleTypeMiter;
     } else {
-        NSLog(@"Unknown button pressed...");
+        motionModel.angleType = MotionModelAngleTypeUnknown;
     }
 }
 

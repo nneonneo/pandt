@@ -7,6 +7,8 @@
 //
 
 #import "AngleMeasureViewController.h"
+#import "MotionModelController.h"
+#import "NumberFormatter.h"
 
 @implementation AngleMeasureViewController
 
@@ -36,17 +38,24 @@
 }
 */
 
-/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    MotionModelController *motionModel = [MotionModelController getInstance];
+    [motionModel setZeroNow]; // TODO: is this an appropriate time to zero?
+    [motionModel startAngleUpdatesWithHandler:^(float angle) {
+        NSString *labelText = [NSString stringWithFormat:@"%.1f", angle];
+        [self performSelectorOnMainThread:@selector(updateAngleLabel:) withObject:labelText waitUntilDone:YES];
+    }];
 }
-*/
 
 - (void)viewDidUnload
 {
+    angleLabel = nil;
     [super viewDidUnload];
+    MotionModelController *motionModel = [MotionModelController getInstance];
+    [motionModel stopAngleUpdates];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
@@ -57,9 +66,15 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void)updateAngleLabel:(NSString *)labelText {
+    angleLabel.text = [@"Current: " stringByAppendingString:labelText];
+    NSString *text = [NumberFormatter getAccessibilityLabelForAngleLabel:labelText];
+    angleLabel.accessibilityLabel = [@"Current angle: " stringByAppendingString:text];
+}
+
 - (IBAction)goToMainMenu {
     UIWindow *window = [[self view] window];
-    /* This will crash if you don't have a navigation controller at the root! */
+    /* XXX This will crash if you don't have a navigation controller at the root! */
     UINavigationController *root_controller = (UINavigationController *)[window rootViewController];
     [root_controller popToRootViewControllerAnimated:YES];
 }
