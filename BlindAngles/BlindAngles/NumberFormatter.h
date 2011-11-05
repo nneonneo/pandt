@@ -10,4 +10,6 @@
 
 @interface NumberFormatter : NSObject
 
++ (NSString *)getAccessibilityLabelForAngleLabel:(NSString *)labelText;
+
 @end
