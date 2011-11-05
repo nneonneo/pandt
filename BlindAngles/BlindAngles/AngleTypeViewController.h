@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AngleTypeViewController : UIViewController
+@interface AngleTypeViewController : UIViewController {
+    
+    __weak IBOutlet UIButton *bevelButton;
+    __weak IBOutlet UIButton *miterButton;
+}
 
 @end

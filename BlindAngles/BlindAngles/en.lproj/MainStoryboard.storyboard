@@ -67,6 +67,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Angle Type" id="s0w-3N-ajg"/>
+                    <connections>
+                        <outlet property="bevelButton" destination="PDY-gO-Vi5" id="eYV-FJ-1J3"/>
+                        <outlet property="miterButton" destination="wou-yR-KmD" id="uyy-YB-499"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="-794" y="356"/>
@@ -568,6 +572,10 @@
         </class>
         <class className="AngleTypeViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AngleTypeViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bevelButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="miterButton" candidateClass="UIButton"/>
+            </relationships>
         </class>
         <class className="InputTypeViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/InputTypeViewController.h"/>

@@ -46,6 +46,8 @@
 
 - (void)viewDidUnload
 {
+    bevelButton = nil;
+    miterButton = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -55,6 +57,16 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if(sender == bevelButton) {
+        NSLog(@"Bevel button!");
+    } else if(sender == miterButton) {
+        NSLog(@"Miter button!");
+    } else {
+        NSLog(@"Unknown button pressed...");
+    }
 }
 
 @end
