@@ -21,6 +21,7 @@
 		7FA1B70814647482007B3BC0 /* TargetAngleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA1B70714647482007B3BC0 /* TargetAngleViewController.m */; };
 		7FA1B71C1465AE46007B3BC0 /* MotionModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA1B71B1465AE46007B3BC0 /* MotionModelController.m */; };
 		7FA1B71E1465B2F4007B3BC0 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FA1B71D1465B2F4007B3BC0 /* CoreMotion.framework */; };
+		7FA1B7211465CC71007B3BC0 /* NumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA1B7201465CC70007B3BC0 /* NumberFormatter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,8 @@
 		7FA1B71A1465AE46007B3BC0 /* MotionModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionModelController.h; sourceTree = "<group>"; };
 		7FA1B71B1465AE46007B3BC0 /* MotionModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionModelController.m; sourceTree = "<group>"; };
 		7FA1B71D1465B2F4007B3BC0 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		7FA1B71F1465CC70007B3BC0 /* NumberFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberFormatter.h; sourceTree = "<group>"; };
+		7FA1B7201465CC70007B3BC0 /* NumberFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberFormatter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				7FA1B7041464746A007B3BC0 /* AngleMeasureViewController.m */,
 				7FA1B71A1465AE46007B3BC0 /* MotionModelController.h */,
 				7FA1B71B1465AE46007B3BC0 /* MotionModelController.m */,
+				7FA1B71F1465CC70007B3BC0 /* NumberFormatter.h */,
+				7FA1B7201465CC70007B3BC0 /* NumberFormatter.m */,
 				7FA1B6AF14645AE9007B3BC0 /* AppDelegate.h */,
 				7FA1B6B014645AE9007B3BC0 /* AppDelegate.m */,
 				7FA1B6B214645AE9007B3BC0 /* MainStoryboard.storyboard */,
@@ -199,6 +204,7 @@
 				7FA1B7051464746A007B3BC0 /* AngleMeasureViewController.m in Sources */,
 				7FA1B70814647482007B3BC0 /* TargetAngleViewController.m in Sources */,
 				7FA1B71C1465AE46007B3BC0 /* MotionModelController.m in Sources */,
+				7FA1B7211465CC71007B3BC0 /* NumberFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
