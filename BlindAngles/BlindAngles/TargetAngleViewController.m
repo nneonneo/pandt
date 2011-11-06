@@ -13,6 +13,8 @@
 @implementation TargetAngleViewController
 static int soundPlayCounter = 0;
 const int PLAY_SOUND_AT = 10;
+const float ANGLE_THRESHOLD = 1.0f;
+BOOL hitAngle = false;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -78,10 +80,13 @@ const int PLAY_SOUND_AT = 10;
 }
 
 - (void)updateSoundForAngle:(float)angle end:(float)targetAngle {
-    if (angle < targetAngle) {
+    if (angle < targetAngle - ANGLE_THRESHOLD) {
         [farSound play];
-    } else if (angle > targetAngle) {
+    } else if (angle > targetAngle + ANGLE_THRESHOLD) {
         [nearSound play];
+    } else if (!hitAngle) {
+        [levelSound play];
+        hitAngle = true;
     }
 }
 
