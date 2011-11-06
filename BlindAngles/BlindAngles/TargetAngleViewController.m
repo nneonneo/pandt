@@ -11,10 +11,8 @@
 #import "MotionModelController.h"
 
 @implementation TargetAngleViewController
-static int soundPlayCounter = 0;
-const int PLAY_SOUND_AT = 10;
-const float ANGLE_THRESHOLD = 1.0f;
-BOOL hitAngle = false;
+
+@synthesize hitPlayCounter,hitAngle,soundPlayCounter;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,12 +24,10 @@ BOOL hitAngle = false;
 }
 
 - (void)setupSounds {
-    NSLog(@"Setting up sounds for great justice...");
     NSBundle *mainBundle = [NSBundle mainBundle];
-    NSLog(@"Bundle loading properly");
-    farSound = [[SoundEffect alloc] initWithContentsOfFile:[mainBundle pathForResource:@"farSound" ofType:@"caf"]];
-    nearSound = [[SoundEffect alloc] initWithContentsOfFile:[mainBundle pathForResource:@"nearSound" ofType:@"caf"]];
-    levelSound = [[SoundEffect alloc] initWithContentsOfFile:[mainBundle pathForResource:@"levelSound" ofType:@"caf"]];
+    overSound = [[SoundEffect alloc] initWithContentsOfFile:[mainBundle pathForResource:@"farSound" ofType:@"caf"]];
+    underSound = [[SoundEffect alloc] initWithContentsOfFile:[mainBundle pathForResource:@"nearSound" ofType:@"caf"]];
+    hitSound = [[SoundEffect alloc] initWithContentsOfFile:[mainBundle pathForResource:@"levelSound" ofType:@"caf"]];
 }
 
 
@@ -58,8 +54,10 @@ BOOL hitAngle = false;
 {    
     [super viewDidLoad];
     [self setupSounds];
-    NSLog(@"Loading TargetAngleViewController view...");
     MotionModelController *motionModel = [MotionModelController getInstance];
+    soundPlayCounter = 0;
+    hitAngle = false;
+    hitPlayCounter = 0;
     [self updateTargetLabel:[NSString stringWithFormat:@"%.1f", motionModel.targetAngle]];
     [motionModel setZeroNow]; // TODO: is this an appropriate time to zero?
     [motionModel startAngleUpdatesWithHandler:^(float angle) {
@@ -67,13 +65,23 @@ BOOL hitAngle = false;
         [self performSelectorOnMainThread:@selector(updateAngleLabel:) withObject:labelText waitUntilDone:YES];
         soundPlayCounter++;
         
-        if (soundPlayCounter == PLAY_SOUND_AT) {
+        if (soundPlayCounter == [self calculateSoundRate:angle dest:[motionModel targetAngle]]) {
+            //NSLog([@"Sound rate is:" stringByAppendingString:[NSString stringWithFormat:@"%i",[self calculateSoundRate:angle dest:[motionModel targetAngle]]]]);
             [self updateSoundForAngle:angle end:[motionModel targetAngle]];
             soundPlayCounter = 0;
         }
     }];
-    NSLog(@"Attempting to play levelSound...");
-    [levelSound play];
+}
+
+/*
+ Calculates sound rate by linearly interpolating between MAX_SOUND_RATE and MIN_SOUND_RATE.
+ The interpolation parameter reduces to (MAX-MIN)*threshold/distance so that the sound rate is lowest
+ when the angle is right at the threshold
+ */
+- (int)calculateSoundRate:(float)angle dest:(float)targetAngle {
+    float dist = targetAngle - angle;
+    float denom = (ANGLE_THRESHOLD == 0.0)? 1.0f : ANGLE_THRESHOLD;
+    return round(MAX_SOUND_RATE + ((MIN_SOUND_RATE-MAX_SOUND_RATE)/(dist/denom)));
 }
 
 - (void)updateTargetLabel:(NSString *)labelText {
@@ -90,14 +98,16 @@ BOOL hitAngle = false;
 
 - (void)updateSoundForAngle:(float)angle end:(float)targetAngle {
     if (angle < targetAngle - ANGLE_THRESHOLD) {
-        [farSound play];
+        [underSound play];
         hitAngle = false;
+        hitPlayCounter = 0;
     } else if (angle > targetAngle + ANGLE_THRESHOLD) {
-        [nearSound play];
+        [overSound play];
         hitAngle = false;
+        hitPlayCounter = 0;
     } else if (!hitAngle) {
-        [levelSound play];
-        hitAngle = true;
+        [hitSound play];
+        hitAngle = (++hitPlayCounter >= STOP_HIT_SOUND_AT);
     }
 }
 
