@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="10K549" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="eIO-Dy-jlt">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C74" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="eIO-Dy-jlt">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
@@ -80,7 +80,7 @@
         <scene sceneID="65p-8d-ecm">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NIg-hc-Yce" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="8nQ-Zy-ToO" customClass="VertAngleTypeViewController" sceneMemberID="viewController">
+                <viewController id="8nQ-Zy-ToO" customClass="AngleTypeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uIB-Yg-MkU">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -120,7 +120,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="wck-9V-uhq"/>
+                    <navigationItem key="navigationItem" title="Angle Type" id="wck-9V-uhq"/>
                     <connections>
                         <outlet property="bevelButton" destination="euy-cf-8YV" id="u2g-41-lcy"/>
                         <outlet property="miterButton" destination="W1R-05-BUS" id="vmo-CR-Qsp"/>
@@ -132,7 +132,7 @@
         <scene sceneID="CF8-Kk-oLl">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ylF-f8-XZP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="YLM-rr-QCY" customClass="VertInputTypeViewController" sceneMemberID="viewController">
+                <viewController id="YLM-rr-QCY" customClass="InputTypeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9hn-ro-nWz">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -170,7 +170,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="C4a-y7-25P"/>
+                    <navigationItem key="navigationItem" title="Angle Mode" id="C4a-y7-25P"/>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="374" y="-218"/>
@@ -755,16 +755,6 @@
                 <relationship kind="outlet" name="targetLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
-        <class className="VertAngleTypeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VertAngleTypeViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="bevelButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="miterButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="VertInputTypeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VertInputTypeViewController.h"/>
-        </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -773,8 +763,8 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="h2b-aV-NOh"/>
-        <segue reference="IV2-xi-l72"/>
         <segue reference="u7x-l9-d8B"/>
+        <segue reference="IV2-xi-l72"/>
         <segue reference="7xT-JI-BZK"/>
     </inferredMetricsTieBreakers>
 </document>

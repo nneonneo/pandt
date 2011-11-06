@@ -29,8 +29,6 @@
 		9C76E09F14660C2A0012CF01 /* levelSound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9C76E09C14660C2A0012CF01 /* levelSound.caf */; };
 		9C76E0A014660C2A0012CF01 /* nearSound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9C76E09D14660C2A0012CF01 /* nearSound.caf */; };
 		9C76E0A8146652960012CF01 /* MainMenuChoices.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C76E0A6146652960012CF01 /* MainMenuChoices.m */; };
-		9C76E0AD1466532E0012CF01 /* VertAngleTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C76E0AC1466532E0012CF01 /* VertAngleTypeViewController.m */; };
-		9C76E0B0146654960012CF01 /* VertInputTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C76E0AF146654960012CF01 /* VertInputTypeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,10 +68,6 @@
 		9C76E09D14660C2A0012CF01 /* nearSound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nearSound.caf; sourceTree = "<group>"; };
 		9C76E0A5146652950012CF01 /* MainMenuChoices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuChoices.h; sourceTree = "<group>"; };
 		9C76E0A6146652960012CF01 /* MainMenuChoices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuChoices.m; sourceTree = "<group>"; };
-		9C76E0AB1466532E0012CF01 /* VertAngleTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertAngleTypeViewController.h; sourceTree = "<group>"; };
-		9C76E0AC1466532E0012CF01 /* VertAngleTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VertAngleTypeViewController.m; sourceTree = "<group>"; };
-		9C76E0AE146654950012CF01 /* VertInputTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertInputTypeViewController.h; sourceTree = "<group>"; };
-		9C76E0AF146654960012CF01 /* VertInputTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VertInputTypeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,10 +139,6 @@
 				7FA1B6AF14645AE9007B3BC0 /* AppDelegate.h */,
 				7FA1B6B014645AE9007B3BC0 /* AppDelegate.m */,
 				7FA1B6B214645AE9007B3BC0 /* MainStoryboard.storyboard */,
-				9C76E0AE146654950012CF01 /* VertInputTypeViewController.h */,
-				9C76E0AF146654960012CF01 /* VertInputTypeViewController.m */,
-				9C76E0AB1466532E0012CF01 /* VertAngleTypeViewController.h */,
-				9C76E0AC1466532E0012CF01 /* VertAngleTypeViewController.m */,
 				9C76E0A5146652950012CF01 /* MainMenuChoices.h */,
 				9C76E0A6146652960012CF01 /* MainMenuChoices.m */,
 				7FA1B6A714645AE9007B3BC0 /* Supporting Files */,
@@ -255,8 +245,6 @@
 				7FA1B7211465CC71007B3BC0 /* NumberFormatter.m in Sources */,
 				9C76E0941465F09D0012CF01 /* SoundEffect.m in Sources */,
 				9C76E0A8146652960012CF01 /* MainMenuChoices.m in Sources */,
-				9C76E0AD1466532E0012CF01 /* VertAngleTypeViewController.m in Sources */,
-				9C76E0B0146654960012CF01 /* VertInputTypeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
