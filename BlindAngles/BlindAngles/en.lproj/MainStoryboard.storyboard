@@ -1,10 +1,68 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C74" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="eIO-Dy-jlt">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="10K549" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="eIO-Dy-jlt">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
     </dependencies>
     <scenes>
+        <scene sceneID="30H-WX-LSt">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9I1-C5-dY6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="k1q-dx-tOO" customClass="MainMenuChoices" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aRV-uw-dJI">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Otc-LT-OMO">
+                                <rect key="frame" x="20" y="20" width="280" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <state key="normal" title="Vertical">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Hwd-Tk-QpI">
+                                <rect key="frame" x="20" y="86" width="280" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <state key="normal" title="Horizontal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2" kind="push" id="dZe-74-BgB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="I2j-vw-k8F">
+                                <rect key="frame" x="20" y="20" width="280" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <state key="normal" title="Vertical">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="8nQ-Zy-ToO" kind="push" id="uKj-eN-BGy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QTm-Po-7Nd"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-781" y="356"/>
+        </scene>
         <scene sceneID="Lee-JC-Erz">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dcr-lF-5V1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -13,11 +71,109 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="2" kind="relationship" relationship="rootViewController" id="fqq-Oq-Ujc"/>
+                        <segue destination="k1q-dx-tOO" kind="relationship" relationship="rootViewController" id="nvx-4V-lp5"/>
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-1327" y="356"/>
+            <point key="canvasLocation" x="-1331" y="356"/>
+        </scene>
+        <scene sceneID="65p-8d-ecm">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NIg-hc-Yce" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="8nQ-Zy-ToO" customClass="VertAngleTypeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uIB-Yg-MkU">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="euy-cf-8YV">
+                                <rect key="frame" x="20" y="8" width="135" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" label="Bevel"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="36"/>
+                                <state key="normal" title="Bevel">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="YLM-rr-QCY" kind="push" id="B0B-qK-7Gc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="W1R-05-BUS">
+                                <rect key="frame" x="165" y="8" width="135" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" label="Miter"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="36"/>
+                                <state key="normal" title="Miter">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="YLM-rr-QCY" kind="push" id="h2b-aV-NOh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wck-9V-uhq"/>
+                    <connections>
+                        <outlet property="bevelButton" destination="euy-cf-8YV" id="u2g-41-lcy"/>
+                        <outlet property="miterButton" destination="W1R-05-BUS" id="vmo-CR-Qsp"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-178" y="-218"/>
+        </scene>
+        <scene sceneID="CF8-Kk-oLl">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ylF-f8-XZP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="YLM-rr-QCY" customClass="VertInputTypeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9hn-ro-nWz">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="T9f-4Y-3nP">
+                                <rect key="frame" x="20" y="8" width="135" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="24"/>
+                                <state key="normal" title="Enter Angle">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="xkN-MO-dEw" kind="push" id="u7x-l9-d8B"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" id="9pG-Vp-DcD">
+                                <rect key="frame" x="163" y="8" width="135" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="24"/>
+                                <state key="normal" title="Measure Angle">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="0kA-UG-d9b" kind="push" id="IV2-xi-l72"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="C4a-y7-25P"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="374" y="-218"/>
         </scene>
         <scene sceneID="5">
             <objects>
@@ -73,7 +229,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-794" y="356"/>
+            <point key="canvasLocation" x="-186" y="356"/>
         </scene>
         <scene sceneID="DkB-Uk-VRD">
             <objects>
@@ -132,7 +288,7 @@
                     <navigationItem key="navigationItem" title="Angle Mode" id="90m-Ce-ICh"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-247" y="356"/>
+            <point key="canvasLocation" x="374" y="356"/>
         </scene>
         <scene sceneID="jkm-M0-ejT">
             <objects>
@@ -439,7 +595,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="292" y="32"/>
+            <point key="canvasLocation" x="916" y="38"/>
         </scene>
         <scene sceneID="Ign-ED-fns">
             <objects>
@@ -504,7 +660,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="899" y="32"/>
+            <point key="canvasLocation" x="1523" y="38"/>
         </scene>
         <scene sceneID="Hd7-vE-gjc">
             <objects>
@@ -558,7 +714,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="292" y="708"/>
+            <point key="canvasLocation" x="916" y="714"/>
         </scene>
     </scenes>
     <classes>
@@ -588,6 +744,9 @@
         <class className="InputTypeViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/InputTypeViewController.h"/>
         </class>
+        <class className="MainMenuChoices" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainMenuChoices.h"/>
+        </class>
         <class className="TargetAngleViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TargetAngleViewController.h"/>
             <relationships>
@@ -596,6 +755,16 @@
                 <relationship kind="outlet" name="targetLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
+        <class className="VertAngleTypeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VertAngleTypeViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bevelButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="miterButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="VertInputTypeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VertInputTypeViewController.h"/>
+        </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -603,6 +772,9 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="h2b-aV-NOh"/>
+        <segue reference="IV2-xi-l72"/>
+        <segue reference="u7x-l9-d8B"/>
         <segue reference="7xT-JI-BZK"/>
     </inferredMetricsTieBreakers>
 </document>
