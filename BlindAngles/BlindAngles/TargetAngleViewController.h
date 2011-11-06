@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SoundEffect.h"
 
-@interface TargetAngleViewController : UIViewController
+@interface TargetAngleViewController : UIViewController {
+    __weak IBOutlet UILabel *angleLabel;
+    SoundEffect *farSound;
+    SoundEffect *nearSound;
+    SoundEffect *levelSound;
+}
+
+- (void)setupSounds;
+- (void)updateAngleLabel:(NSString *)labelText;
+- (void)updateSoundForAngle:(float)angle end:(float)targetAngle;
+- (IBAction)goToMainMenu;
 
 @end

@@ -70,7 +70,9 @@
     angleLabel.text = [@"Current: " stringByAppendingString:labelText];
     NSString *text = [NumberFormatter getAccessibilityLabelForAngleLabel:labelText];
     angleLabel.accessibilityLabel = [@"Current angle: " stringByAppendingString:text];
+    
 }
+
 
 - (IBAction)goToMainMenu {
     UIWindow *window = [[self view] window];

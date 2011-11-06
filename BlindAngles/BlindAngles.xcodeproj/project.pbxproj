@@ -22,6 +22,9 @@
 		7FA1B71C1465AE46007B3BC0 /* MotionModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA1B71B1465AE46007B3BC0 /* MotionModelController.m */; };
 		7FA1B71E1465B2F4007B3BC0 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FA1B71D1465B2F4007B3BC0 /* CoreMotion.framework */; };
 		7FA1B7211465CC71007B3BC0 /* NumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FA1B7201465CC70007B3BC0 /* NumberFormatter.m */; };
+		9C76E0941465F09D0012CF01 /* SoundEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C76E0931465F09B0012CF01 /* SoundEffect.m */; };
+		9C76E097146603B20012CF01 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C76E096146603B20012CF01 /* CoreAudio.framework */; };
+		9C76E099146604600012CF01 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C76E098146604600012CF01 /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,10 @@
 		7FA1B71D1465B2F4007B3BC0 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		7FA1B71F1465CC70007B3BC0 /* NumberFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberFormatter.h; sourceTree = "<group>"; };
 		7FA1B7201465CC70007B3BC0 /* NumberFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberFormatter.m; sourceTree = "<group>"; };
+		9C76E0921465F09B0012CF01 /* SoundEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundEffect.h; sourceTree = "<group>"; };
+		9C76E0931465F09B0012CF01 /* SoundEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundEffect.m; sourceTree = "<group>"; };
+		9C76E096146603B20012CF01 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		9C76E098146604600012CF01 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C76E099146604600012CF01 /* AudioToolbox.framework in Frameworks */,
+				9C76E097146603B20012CF01 /* CoreAudio.framework in Frameworks */,
 				7FA1B71E1465B2F4007B3BC0 /* CoreMotion.framework in Frameworks */,
 				7FA1B6A114645AE9007B3BC0 /* UIKit.framework in Frameworks */,
 				7FA1B6A314645AE9007B3BC0 /* Foundation.framework in Frameworks */,
@@ -90,6 +99,8 @@
 		7FA1B69F14645AE9007B3BC0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9C76E098146604600012CF01 /* AudioToolbox.framework */,
+				9C76E096146603B20012CF01 /* CoreAudio.framework */,
 				7FA1B71D1465B2F4007B3BC0 /* CoreMotion.framework */,
 				7FA1B6A014645AE9007B3BC0 /* UIKit.framework */,
 				7FA1B6A214645AE9007B3BC0 /* Foundation.framework */,
@@ -119,6 +130,8 @@
 				7FA1B6B014645AE9007B3BC0 /* AppDelegate.m */,
 				7FA1B6B214645AE9007B3BC0 /* MainStoryboard.storyboard */,
 				7FA1B6A714645AE9007B3BC0 /* Supporting Files */,
+				9C76E0921465F09B0012CF01 /* SoundEffect.h */,
+				9C76E0931465F09B0012CF01 /* SoundEffect.m */,
 			);
 			path = BlindAngles;
 			sourceTree = "<group>";
@@ -205,6 +218,7 @@
 				7FA1B70814647482007B3BC0 /* TargetAngleViewController.m in Sources */,
 				7FA1B71C1465AE46007B3BC0 /* MotionModelController.m in Sources */,
 				7FA1B7211465CC71007B3BC0 /* NumberFormatter.m in Sources */,
+				9C76E0941465F09D0012CF01 /* SoundEffect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +346,7 @@
 				7FA1B6BC14645AE9007B3BC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SoundEffect.h"
 
 @interface AngleMeasureViewController : UIViewController {
     __weak IBOutlet UILabel *angleLabel;
 }
 
 - (void)updateAngleLabel:(NSString *)labelText;
+
 
 - (IBAction)goToMainMenu;
 
