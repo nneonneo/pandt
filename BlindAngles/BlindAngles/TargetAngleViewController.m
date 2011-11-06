@@ -60,6 +60,7 @@ BOOL hitAngle = false;
     [self setupSounds];
     NSLog(@"Loading TargetAngleViewController view...");
     MotionModelController *motionModel = [MotionModelController getInstance];
+    [self updateTargetLabel:[NSString stringWithFormat:@"%.1f", motionModel.targetAngle]];
     [motionModel setZeroNow]; // TODO: is this an appropriate time to zero?
     [motionModel startAngleUpdatesWithHandler:^(float angle) {
         NSString *labelText = [NSString stringWithFormat:@"%.1f", angle];
@@ -75,12 +76,16 @@ BOOL hitAngle = false;
     [levelSound play];
 }
 
+- (void)updateTargetLabel:(NSString *)labelText {
+    targetLabel.text = [@"Target: " stringByAppendingString:labelText];
+    NSString *text = [NumberFormatter getAccessibilityLabelForAngleLabel:labelText];
+    targetLabel.accessibilityLabel = [@"Target angle: " stringByAppendingString:text];
+}
 
 - (void)updateAngleLabel:(NSString *)labelText {
     angleLabel.text = [@"Current: " stringByAppendingString:labelText];
     NSString *text = [NumberFormatter getAccessibilityLabelForAngleLabel:labelText];
     angleLabel.accessibilityLabel = [@"Current angle: " stringByAppendingString:text];
-    
 }
 
 - (void)updateSoundForAngle:(float)angle end:(float)targetAngle {
@@ -98,7 +103,11 @@ BOOL hitAngle = false;
 
 - (void)viewDidUnload
 {
+    angleLabel = nil;
+    targetLabel = nil;
     [super viewDidUnload];
+    MotionModelController *motionModel = [MotionModelController getInstance];
+    [motionModel stopAngleUpdates];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
