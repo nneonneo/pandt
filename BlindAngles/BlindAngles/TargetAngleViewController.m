@@ -82,8 +82,10 @@ BOOL hitAngle = false;
 - (void)updateSoundForAngle:(float)angle end:(float)targetAngle {
     if (angle < targetAngle - ANGLE_THRESHOLD) {
         [farSound play];
+        hitAngle = false;
     } else if (angle > targetAngle + ANGLE_THRESHOLD) {
         [nearSound play];
+        hitAngle = false;
     } else if (!hitAngle) {
         [levelSound play];
         hitAngle = true;
