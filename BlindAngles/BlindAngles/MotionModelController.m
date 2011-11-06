@@ -72,7 +72,13 @@ static MotionModelController *_instance = nil;
                 return;
         }
 
-        angle = fmodf(angle, M_PI);
+        /* correct angle to [-pi, pi] */
+        angle = fmodf(angle, 2*M_PI);
+        if(angle < -M_PI)
+            angle += 2*M_PI;
+        if(angle > M_PI)
+            angle -= 2*M_PI;
+
         /* convert to degrees */
         angle = angle * 180.0 / M_PI;
         handler(angle);
