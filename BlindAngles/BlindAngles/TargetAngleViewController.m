@@ -21,13 +21,14 @@ BOOL hitAngle = false;
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        [self setupSounds];
     }
     return self;
 }
 
 - (void)setupSounds {
+    NSLog(@"Setting up sounds for great justice...");
     NSBundle *mainBundle = [NSBundle mainBundle];
+    NSLog(@"Bundle loading properly");
     farSound = [[SoundEffect alloc] initWithContentsOfFile:[mainBundle pathForResource:@"farSound" ofType:@"caf"]];
     nearSound = [[SoundEffect alloc] initWithContentsOfFile:[mainBundle pathForResource:@"nearSound" ofType:@"caf"]];
     levelSound = [[SoundEffect alloc] initWithContentsOfFile:[mainBundle pathForResource:@"levelSound" ofType:@"caf"]];
@@ -56,6 +57,8 @@ BOOL hitAngle = false;
 - (void)viewDidLoad
 {    
     [super viewDidLoad];
+    [self setupSounds];
+    NSLog(@"Loading TargetAngleViewController view...");
     MotionModelController *motionModel = [MotionModelController getInstance];
     [motionModel setZeroNow]; // TODO: is this an appropriate time to zero?
     [motionModel startAngleUpdatesWithHandler:^(float angle) {
@@ -68,7 +71,8 @@ BOOL hitAngle = false;
             soundPlayCounter = 0;
         }
     }];
-
+    NSLog(@"Attempting to play levelSound...");
+    [levelSound play];
 }
 
 

@@ -25,6 +25,9 @@
 		9C76E0941465F09D0012CF01 /* SoundEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C76E0931465F09B0012CF01 /* SoundEffect.m */; };
 		9C76E097146603B20012CF01 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C76E096146603B20012CF01 /* CoreAudio.framework */; };
 		9C76E099146604600012CF01 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C76E098146604600012CF01 /* AudioToolbox.framework */; };
+		9C76E09E14660C2A0012CF01 /* farSound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9C76E09B14660C2A0012CF01 /* farSound.caf */; };
+		9C76E09F14660C2A0012CF01 /* levelSound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9C76E09C14660C2A0012CF01 /* levelSound.caf */; };
+		9C76E0A014660C2A0012CF01 /* nearSound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9C76E09D14660C2A0012CF01 /* nearSound.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +62,9 @@
 		9C76E0931465F09B0012CF01 /* SoundEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundEffect.m; sourceTree = "<group>"; };
 		9C76E096146603B20012CF01 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		9C76E098146604600012CF01 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		9C76E09B14660C2A0012CF01 /* farSound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = farSound.caf; sourceTree = "<group>"; };
+		9C76E09C14660C2A0012CF01 /* levelSound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = levelSound.caf; sourceTree = "<group>"; };
+		9C76E09D14660C2A0012CF01 /* nearSound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nearSound.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 		7FA1B69114645AE9007B3BC0 = {
 			isa = PBXGroup;
 			children = (
+				9C76E09A14660C2A0012CF01 /* Sounds */,
 				7FA1B6BD14645B35007B3BC0 /* VoiceServices.h */,
 				7FA1B6A614645AE9007B3BC0 /* BlindAngles */,
 				7FA1B69F14645AE9007B3BC0 /* Frameworks */,
@@ -147,6 +154,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9C76E09A14660C2A0012CF01 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				9C76E09B14660C2A0012CF01 /* farSound.caf */,
+				9C76E09C14660C2A0012CF01 /* levelSound.caf */,
+				9C76E09D14660C2A0012CF01 /* nearSound.caf */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -199,6 +216,9 @@
 			files = (
 				7FA1B6AB14645AE9007B3BC0 /* InfoPlist.strings in Resources */,
 				7FA1B6B414645AE9007B3BC0 /* MainStoryboard.storyboard in Resources */,
+				9C76E09E14660C2A0012CF01 /* farSound.caf in Resources */,
+				9C76E09F14660C2A0012CF01 /* levelSound.caf in Resources */,
+				9C76E0A014660C2A0012CF01 /* nearSound.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
