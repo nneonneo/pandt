@@ -72,6 +72,7 @@
 
 - (IBAction)pressDigitKey:(UIButton *)sender {
     NSString *digit = [sender titleForState:UIControlStateNormal];
+    UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, digit);
     if(0 == [inputLabel.text compare:@"0"]) {
         [self updateLabel:digit];
     } else {
@@ -81,11 +82,13 @@
 
 - (IBAction)pressDotKey:(UIButton *)sender {
     if([inputLabel.text rangeOfString:@"."].location == NSNotFound) {
+        UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, @"dot");
         [self updateLabel:[inputLabel.text stringByAppendingString:@"."]];
     }
 }
 
 - (IBAction)pressDeleteKey:(UIButton *)sender {
+    UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, @"delete");
     if([inputLabel.text length] == 1) {
         [self updateLabel:@"0"];
     } else {
