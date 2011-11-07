@@ -54,10 +54,14 @@
 {
     angleLabel = nil;
     [super viewDidUnload];
-    MotionModelController *motionModel = [MotionModelController getInstance];
-    [motionModel stopAngleUpdates];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    MotionModelController *motionModel = [MotionModelController getInstance];
+    [motionModel stopAngleUpdates];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
