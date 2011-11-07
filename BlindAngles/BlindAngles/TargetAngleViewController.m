@@ -65,7 +65,7 @@
         [self performSelectorOnMainThread:@selector(updateAngleLabel:) withObject:labelText waitUntilDone:YES];
         soundPlayCounter++;
         
-        if (soundPlayCounter == [self calculateSoundRate:angle dest:[motionModel targetAngle]]) {
+        if (soundPlayCounter >= [self calculateSoundRate:angle dest:[motionModel targetAngle]]) {
             //NSLog([@"Sound rate is:" stringByAppendingString:[NSString stringWithFormat:@"%i",[self calculateSoundRate:angle dest:[motionModel targetAngle]]]]);
             [self updateSoundForAngle:angle end:[motionModel targetAngle]];
             soundPlayCounter = 0;
@@ -80,8 +80,12 @@
  */
 - (int)calculateSoundRate:(float)angle dest:(float)targetAngle {
     float dist = targetAngle - angle;
-    float denom = (ANGLE_THRESHOLD == 0.0)? 1.0f : ANGLE_THRESHOLD;
-    return round(MAX_SOUND_RATE + ((MIN_SOUND_RATE-MAX_SOUND_RATE)/(dist/denom)));
+    if (dist > 45)
+        return MAX_SOUND_RATE;
+    else if (dist <= 5)
+        return MIN_SOUND_RATE;
+    else
+        return round(MIN_SOUND_RATE - (((dist-5)/40)*(MIN_SOUND_RATE - MAX_SOUND_RATE)));
 }
 
 - (void)updateTargetLabel:(NSString *)labelText {
