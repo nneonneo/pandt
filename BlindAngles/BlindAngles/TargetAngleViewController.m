@@ -136,6 +136,11 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)calibrateAction {
+    MotionModelController *motionModel = [MotionModelController getInstance];
+    [motionModel setZeroNow];
+}
+
 - (IBAction)goToMainMenu {
     UIWindow *window = [[self view] window];
     /* XXX This will crash if you don't have a navigation controller at the root! */

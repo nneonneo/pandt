@@ -33,5 +33,6 @@ const float ANGLE_THRESHOLD = 1.0f;
 - (void)updateTargetLabel:(NSString *)labelText;
 - (void)updateAngleLabel:(NSString *)labelText;
 - (void)updateSoundForAngle:(float)angle end:(float)targetAngle;
+- (IBAction)calibrateAction;
 - (IBAction)goToMainMenu;
 @end

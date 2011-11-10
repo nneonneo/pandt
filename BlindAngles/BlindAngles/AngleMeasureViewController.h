@@ -15,7 +15,7 @@
 
 - (void)updateAngleLabel:(NSString *)labelText;
 
-
+- (IBAction)calibrateAction;
 - (IBAction)goToMainMenu;
 
 @end

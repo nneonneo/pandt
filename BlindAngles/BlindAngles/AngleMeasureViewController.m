@@ -77,6 +77,10 @@
     
 }
 
+- (IBAction)calibrateAction {
+    MotionModelController *motionModel = [MotionModelController getInstance];
+    [motionModel setZeroNow];
+}
 
 - (IBAction)goToMainMenu {
     UIWindow *window = [[self view] window];
