@@ -11,7 +11,7 @@
 	<key>CFBundleIconFiles</key>
 	<array/>
 	<key>CFBundleIdentifier</key>
-	<string>org.hciresearch.pandt11.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>org.hciresearch.pandt11.AngleGauge</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
