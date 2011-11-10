@@ -44,8 +44,13 @@ static MotionModelController *_instance = nil;
         return;
     }
 
+    CMAttitudeReferenceFrame referenceFrame =
+    (motionManager.magnetometerAvailable)
+        ? CMAttitudeReferenceFrameXArbitraryCorrectedZVertical
+        : CMAttitudeReferenceFrameXArbitraryZVertical;
+
     motionManager.deviceMotionUpdateInterval = 0.020; // 20ms
-    [motionManager startDeviceMotionUpdatesUsingReferenceFrame:CMAttitudeReferenceFrameXArbitraryZVertical toQueue:motionQueue withHandler:^(CMDeviceMotion *motionData, NSError *error) {
+    [motionManager startDeviceMotionUpdatesUsingReferenceFrame:referenceFrame toQueue:motionQueue withHandler:^(CMDeviceMotion *motionData, NSError *error) {
         if(error) {
             NSLog(@"Error %@ occurred obtaining motion data.", error);
             return;
