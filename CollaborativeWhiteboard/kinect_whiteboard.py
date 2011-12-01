@@ -43,7 +43,7 @@ if __name__ == '__main__':
 
     # Capture background depth, making a copy to avoid referencing
     # freenect's internal depth buffer
-    backdepth, backdepth_ts = freenect.sync_get_depth(format=freenect.DEPTH_REGISTERED)
+    backdepth, backdepth_ts = freenect.sync_get_depth(format=freenect.DEPTH_11BIT)
     backdepth = backdepth.copy()
 
     while running:
@@ -57,7 +57,7 @@ if __name__ == '__main__':
         # XXX This is atypically complex code because of the extreme use of NumPy operations.
 
         # Grab a depth image
-        depth, depth_timestamp = freenect.sync_get_depth(format=freenect.DEPTH_REGISTERED)
+        depth, depth_timestamp = freenect.sync_get_depth(format=freenect.DEPTH_11BIT)
 
         # Depth subtract (background should be farther than foreground objects,
         # so we subtract depth from backdepth)
