@@ -2,7 +2,7 @@
 import pygame
 import freenect
 import numpy as np
-from scipy.misc import pilutil
+import Image
 
 def dof_buckets(depth):
     ''' return array masks corresponding to different depths '''
@@ -15,20 +15,20 @@ def dof_buckets(depth):
         prev = mask
     return masks
 
-def dof_filter(channel, masks):
-    ''' filter image `channel' using dof masks '''
-    accum = np.zeros_like(channel)
-    for sigma, mask in masks:
-        w, h = channel.shape
-        small = pilutil.imresize(channel, (w//sigma, h//sigma))
-        blurred = pilutil.imresize(small, (w, h))
-        np.add(accum, blurred * mask, accum)
-    return accum
+def dof_filter(image, masks):
+    ''' filter image using dof masks '''
+    ret = np.zeros((480, 640, 3), dtype=np.uint8)
+    w, h = image.size
+    for factor, mask in masks:
+        smallim = image.resize((w//factor, h//factor), Image.NEAREST)
+        blurim = smallim.resize((w, h), Image.NEAREST)
+        np.add(ret, np.asarray(blurim) * mask.reshape((480, 640, 1)), ret)
+    return ret
 
-def to_surfimage(r, g, b):
-    r = r.astype('uint32') << 24
-    g = g.astype('uint32') << 16
-    b = b.astype('uint32') << 8
+def to_surfimage(video):
+    r = video[..., 2].astype(np.uint32) << 24
+    g = video[..., 1].astype(np.uint32) << 16
+    b = video[..., 0].astype(np.uint32) << 8
     return (r + g + b + 0xff)
 
 if __name__ == '__main__':
@@ -45,18 +45,16 @@ if __name__ == '__main__':
             if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.unicode == u'q'):
                 running = False
 
-        sa = pygame.surfarray.pixels2d(surf)
-
         depth, depth_timestamp = freenect.sync_get_depth(format=freenect.DEPTH_REGISTERED)
         masks = dof_buckets(depth)
 
         video, video_timestamp = freenect.sync_get_video(format=freenect.VIDEO_RGB)
-        r = dof_filter(video[..., 2], masks)
-        g = dof_filter(video[..., 1], masks)
-        b = dof_filter(video[..., 0], masks)
-        sa[:640, :480] = to_surfimage(r, g, b).transpose()
+        videoim = Image.fromarray(video, mode='RGB')
+        dof = dof_filter(videoim, masks)
 
-        del sa
+        sa = pygame.surfarray.pixels2d(surf)
+        sa[:640, :480] = to_surfimage(dof).transpose()
+        del sa # unlock the surface by removing the array reference
 
         pygame.display.flip()
         print clock.get_fps()
