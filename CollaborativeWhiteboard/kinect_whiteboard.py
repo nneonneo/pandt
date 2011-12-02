@@ -43,6 +43,8 @@ if __name__ == '__main__':
 
     pygame.init()
     surf = pygame.display.set_mode((0, 0), pygame.DOUBLEBUF | pygame.FULLSCREEN)
+    w, h = surf.get_size()
+
     clock = pygame.time.Clock()
     running = True
 
@@ -89,8 +91,8 @@ if __name__ == '__main__':
         ptst = ptst[..., valid_inds] # pick out only the points with valid indices
 
         # Convert [-1,1]*[-1,1] into window coords
-        indx = ((ptst[0] + 1) * 320).astype(int)
-        indy = ((ptst[1] + 1) * 240).astype(int)
+        indx = ((ptst[0] + 1) * (w-1)/2).astype(int)
+        indy = ((ptst[1] + 1) * (h-1)/2).astype(int)
 
         # Paint the whiteboard
         sa = pygame.surfarray.pixels2d(surf)
