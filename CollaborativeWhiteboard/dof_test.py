@@ -4,15 +4,21 @@ import freenect
 import numpy as np
 import Image
 
-def dof_buckets(depth):
+def dof_buckets(depth, sub):
     ''' return array masks corresponding to different depths '''
-    masks = [(4, depth==0)]
-    prev = depth == 0
-    for i, stop in enumerate((600, 1000, 1400, 1800, 2200, 2600, 3000, 65535)):
+    masks = [(1, sub < 20)]
+    prev = (sub < 20)
+    for factor, stop in (
+      #(1, 1),
+      (1, 700),
+      (6, 1200),
+      (12, 1600),
+      (20, 2300),
+      (25, 3200),
+      (30, 65536)):
         mask = depth < stop
-        # Blur amount is (currently) just set to mask level
-        masks.append((i*4+1, mask & ~prev))
-        prev = mask
+        masks.append((factor, mask & ~prev))
+        prev |= mask
     return masks
 
 def dof_filter(image, masks):
@@ -21,6 +27,8 @@ def dof_filter(image, masks):
     w, h = image.size
     for factor, mask in masks:
         smallim = image.resize((w//factor, h//factor), Image.NEAREST)
+        # Remarkably, NEAREST actually has a decent effect.
+        # It's also over 3 times faster than BILINEAR.
         blurim = smallim.resize((w, h), Image.NEAREST)
         np.add(ret, np.asarray(blurim) * mask.reshape((480, 640, 1)), ret)
     return ret
@@ -31,11 +39,19 @@ def to_surfimage(video):
     b = video[..., 0].astype(np.uint32) << 8
     return (r + g + b + 0xff)
 
+def depth11_cvt(depth):
+    return ((depth >> 4) * 0x01010100 + 0xff)
+
 if __name__ == '__main__':
     pygame.init()
     surf = pygame.display.set_mode((640, 480), pygame.DOUBLEBUF)
     clock = pygame.time.Clock()
     running = True
+
+    # Capture background depth, making a copy to avoid referencing
+    # freenect's internal depth buffer.
+    backdepth, backdepth_ts = freenect.sync_get_depth(format=freenect.DEPTH_REGISTERED)
+    backdepth = backdepth.astype('int16')
 
     while running:
         clock.tick(70) # Run at 70 FPS (maximum)
@@ -44,9 +60,18 @@ if __name__ == '__main__':
         for event in events:
             if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.unicode == u'q'):
                 running = False
+            elif event.type == pygame.KEYDOWN and event.unicode == 'r':
+                # Recalibrate
+                backdepth, backdepth_ts = freenect.sync_get_depth(format=freenect.DEPTH_REGISTERED)
+                backdepth = backdepth.astype('int16')
 
         depth, depth_timestamp = freenect.sync_get_depth(format=freenect.DEPTH_REGISTERED)
-        masks = dof_buckets(depth)
+
+        # Depth subtract (background should be farther than foreground objects,
+        # so we subtract depth from backdepth)
+        sub = backdepth - depth
+
+        masks = dof_buckets(depth, sub)
 
         video, video_timestamp = freenect.sync_get_video(format=freenect.VIDEO_RGB)
         videoim = Image.fromarray(video, mode='RGB')
