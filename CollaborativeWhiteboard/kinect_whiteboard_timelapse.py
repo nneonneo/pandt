@@ -28,17 +28,31 @@ def warpmatrix(pts):
     b = [0,0,0,0,0,0,0,0,1]
     return np.reshape(np.linalg.solve(A,b), (3,3))
 
+BASE_COLOR = 0x00ff00
 # Insert points from calibration here.
-points = [(1, 112), (0, 484), (618, 479), (605, 142)]
+points = [(44, 39), (48, 407), (413, 410), (415, 68)]
 #points = [(186, 2), (195, 229), (500, 228), (500, 1)]#[(51, 50), (30, 264), (382, 265), (371, 15)]
 warpmat = warpmatrix(points)
 
 def depth11_cvt(depth):
     return ((depth >> 3) * 0x01010100 + 0xff)
 
+# Refresh the colors to continue the fading process
+def updateColors(time, times, sa):
+        # Choose their color based on how long they've been on the board
+        colors = BASE_COLOR - ((time - times) / 1000000)
+        
+        # Fill in the new colors 
+        positives = (times > 0) & (colors > 0)
+        sa[positives] = colors[positives].astype(np.int32)
+        sa[positives == False] = 0
+        times[positives == False] = 0
+        del positives
+
 if __name__ == '__main__':
     pygame.init()
     surf = pygame.display.set_mode((0, 0), pygame.DOUBLEBUF | pygame.FULLSCREEN)
+    times = np.zeros( (640, 480), dtype=np.int32 )
     clock = pygame.time.Clock()
     running = True
 
@@ -59,7 +73,7 @@ if __name__ == '__main__':
 
         # Grab a depth image
         depth, depth_timestamp = freenect.sync_get_depth(format=freenect.DEPTH_11BIT)
-
+        time = np.int32(depth_timestamp)
         # Depth subtract (background should be farther than foreground objects,
         # so we subtract depth from backdepth)
         sub = backdepth - depth
@@ -79,8 +93,12 @@ if __name__ == '__main__':
 
         # Select only those points which actually lie in the square
         valid_inds = (ptst[0] > -1) & (ptst[0] < 1) & (ptst[1] > -1) & (ptst[1] < 1)
+        sa = pygame.surfarray.pixels2d(surf)
         if not valid_inds.any():
             # No indices to paint...
+            updateColors(time, times, sa)
+            pygame.display.flip()
+            del sa
             continue
         ptst = ptst[..., valid_inds] # pick out only the points with valid indices
 
@@ -88,10 +106,10 @@ if __name__ == '__main__':
         indx = ((ptst[0] + 1) * 320).astype(int)
         indy = ((ptst[1] + 1) * 240).astype(int)
 
-        # Paint the whiteboard
-        sa = pygame.surfarray.pixels2d(surf)
-        sa[indx, indy] = 0xff00ff00
+        updateColors(time, times, sa)
+        # Add the new pixels and update the screen
+        sa[indx, indy] = BASE_COLOR
+        times[indx, indy] = time
         del sa
         pygame.display.flip()
-
     pygame.quit()
