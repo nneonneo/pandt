@@ -1,8 +1,13 @@
-""" Simple test app to display the depth and video images from a Kinect """
+"""
+Simple test app to display the depth and video images from a Kinect.
+"""
+
 import pygame
 import freenect
 import numpy as np
-import Image
+import Image # PIL
+
+DEPTH_FORMAT = freenect.DEPTH_11BIT # freenect.DEPTH_REGISTERED
 
 def dof_buckets(depth, sub):
     ''' return array masks corresponding to different depths '''
@@ -50,7 +55,7 @@ if __name__ == '__main__':
 
     # Capture background depth, making a copy to avoid referencing
     # freenect's internal depth buffer.
-    backdepth, backdepth_ts = freenect.sync_get_depth(format=freenect.DEPTH_REGISTERED)
+    backdepth, backdepth_ts = freenect.sync_get_depth(format=DEPTH_FORMAT)
     backdepth = backdepth.astype('int16')
 
     while running:
@@ -62,10 +67,10 @@ if __name__ == '__main__':
                 running = False
             elif event.type == pygame.KEYDOWN and event.unicode == 'r':
                 # Recalibrate
-                backdepth, backdepth_ts = freenect.sync_get_depth(format=freenect.DEPTH_REGISTERED)
+                backdepth, backdepth_ts = freenect.sync_get_depth(format=DEPTH_FORMAT)
                 backdepth = backdepth.astype('int16')
 
-        depth, depth_timestamp = freenect.sync_get_depth(format=freenect.DEPTH_REGISTERED)
+        depth, depth_timestamp = freenect.sync_get_depth(format=DEPTH_FORMAT)
 
         # Depth subtract (background should be farther than foreground objects,
         # so we subtract depth from backdepth)
