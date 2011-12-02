@@ -57,7 +57,15 @@ if __name__ == '__main__':
                 if len(points) == 4:
                     running = False
 
+    pygame.quit()
+
     # Print the accumulated points here.
     # Copy those points to kinect_whiteboard.py.
-    print points
-    pygame.quit()
+    print "Calibration:", points
+    yn = raw_input("Save calibration (y/n)? ")
+    if yn == "y":
+        with open("whiteboard_calib.txt", "w") as f:
+            print >> f, points
+        print "Calibration saved."
+    else:
+        print "Calibration not saved."

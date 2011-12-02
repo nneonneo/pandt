@@ -28,14 +28,19 @@ def warpmatrix(pts):
     b = [0,0,0,0,0,0,0,0,1]
     return np.reshape(np.linalg.solve(A,b), (3,3))
 
-# Insert points from calibration here.
-points = [(51, 50), (30, 264), (382, 265), (371, 15)]
-warpmat = warpmatrix(points)
-
 def depth11_cvt(depth):
     return ((depth >> 3) * 0x01010100 + 0xff)
 
 if __name__ == '__main__':
+    try:
+        with open("whiteboard_calib.txt", "r") as f:
+            points = eval(f.read().strip())
+    except IOError:
+        print "Could not open whiteboard calibration; please run kinect_whiteboard_calib.py"
+        exit(1)
+    
+    warpmat = warpmatrix(points)
+
     pygame.init()
     surf = pygame.display.set_mode((0, 0), pygame.DOUBLEBUF | pygame.FULLSCREEN)
     clock = pygame.time.Clock()
