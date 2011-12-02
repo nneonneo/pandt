@@ -57,6 +57,9 @@ if __name__ == '__main__':
                 if len(points) == 4:
                     running = False
 
+        for x, y in points:
+            pygame.draw.circle(surf, (255, 0, 0), (x, y), 3)
+        pygame.display.flip()
     pygame.quit()
 
     # Print the accumulated points here.
