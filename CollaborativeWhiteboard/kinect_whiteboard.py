@@ -31,6 +31,35 @@ def warpmatrix(pts):
 def depth11_cvt(depth):
     return ((depth >> 3) * 0x01010100 + 0xff)
 
+def get_backdepth():
+    '''
+    Capture background depth, making a copy to avoid referencing
+    freenect's internal depth buffer
+    '''
+
+    backdepth, backdepth_ts = freenect.sync_get_depth(format=freenect.DEPTH_11BIT)
+    return backdepth.copy()
+
+def set_kinect_angle(angle, device_index=0):
+    # Clamp angle to [-30, 30]
+    angle = min(angle, max(angle, -30), 30)
+    print "Setting Kinect angle to", angle
+
+    # We have to stop the synchronous runloop to interact with the device.
+    freenect.sync_stop()
+
+    # Open the device
+    ctx = freenect.init()
+    dev = freenect.open_device(ctx, device_index)
+
+    # Set angle
+    freenect.set_tilt_degs(dev, angle)
+
+    # Shutdown context, allowing synchronous runloop to start
+    freenect.shutdown(ctx)
+
+    return angle
+
 if __name__ == '__main__':
     try:
         with open("whiteboard_calib.txt", "r") as f:
@@ -48,10 +77,10 @@ if __name__ == '__main__':
     clock = pygame.time.Clock()
     running = True
 
-    # Capture background depth, making a copy to avoid referencing
-    # freenect's internal depth buffer
-    backdepth, backdepth_ts = freenect.sync_get_depth(format=freenect.DEPTH_11BIT)
-    backdepth = backdepth.copy()
+    angle = 15
+    set_kinect_angle(angle)
+
+    backdepth = get_backdepth()
 
     while running:
         clock.tick(70) # Run at 70 FPS (maximum)
@@ -60,6 +89,17 @@ if __name__ == '__main__':
         for event in events:
             if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.unicode == u'q'):
                 running = False
+            elif event.type == pygame.KEYDOWN:
+                if event.unicode == u'r':
+                    # Recalibrate
+                    backdepth = get_backdepth()
+                elif event.key == pygame.K_BACKSPACE:
+                    # Clear screen
+                    surf.fill((0, 0, 0))
+                elif event.unicode == u'a':
+                    angle = set_kinect_angle(angle + 2)
+                elif event.unicode == u'z':
+                    angle = set_kinect_angle(angle - 2)
 
         # XXX This is atypically complex code because of the extreme use of NumPy operations.
 
