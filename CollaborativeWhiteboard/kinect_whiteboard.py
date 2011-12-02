@@ -38,7 +38,7 @@ def get_backdepth():
     '''
 
     backdepth, backdepth_ts = freenect.sync_get_depth(format=freenect.DEPTH_11BIT)
-    return backdepth.copy()
+    return backdepth.copy().astype(np.int16)
 
 def set_kinect_angle(angle, device_index=0):
     # Clamp angle to [-30, 30]
@@ -108,11 +108,11 @@ if __name__ == '__main__':
 
         # Depth subtract (background should be farther than foreground objects,
         # so we subtract depth from backdepth)
-        sub = backdepth - depth
+        sub = backdepth - depth.astype(np.int16)
 
         # Select those points which are between 10mm and 20mm in front of the background.
         # This captures most fingers nicely, while avoiding the constant +/- 5mm noise.
-        txp = (backdepth != 0) & (depth != 0) & (sub > 10) & (sub < 20)
+        txp = (backdepth != 0) & (depth != 0) & (sub > 10) & (sub < 16)
         # Convert the boolean mask txp into index arrays
         txpn = np.nonzero(txp)
 
