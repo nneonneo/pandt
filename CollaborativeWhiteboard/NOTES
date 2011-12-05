@@ -1,0 +1,4 @@
+Random Kinect notes:
+- The Kinect has a "warm-up" time after you start requesting depth data.
+  In particular, for up to 1 minute after startup, depth values will shift around,
+  sometimes by as much as 5 cm. So, you may wish to recalibrate after startup.
