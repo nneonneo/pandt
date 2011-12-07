@@ -28,6 +28,19 @@ def warpmatrix(pts):
     b = [0,0,0,0,0,0,0,0,1]
     return np.reshape(np.linalg.solve(A,b), (3,3))
 
+BASE_COLOR = 0x00ff00
+# Refresh the colors to continue the fading process
+def updateColors(time, times, sa):
+        # Choose their color based on how long they've been on the board
+        timeDiff = time - times
+        colors = (BASE_COLOR - timeDiff) & 0x00ff00
+        # Fill in the new colors 
+        positives = (times > 0) & (BASE_COLOR > timeDiff)
+        sa[positives] = colors[positives].astype(np.int32)
+        sa[positives == False] = 0
+        times[positives == False] = 0
+        del positives
+
 def depth11_cvt(depth):
     return ((depth >> 3) * 0x01010100 + 0xff)
 
@@ -73,6 +86,7 @@ if __name__ == '__main__':
     pygame.init()
     surf = pygame.display.set_mode((0, 0), pygame.DOUBLEBUF | pygame.FULLSCREEN)
     w, h = surf.get_size()
+    times = np.zeros( (w, h), dtype=np.int32 )
 
     clock = pygame.time.Clock()
     running = True
@@ -105,6 +119,8 @@ if __name__ == '__main__':
 
         # Grab a depth image
         depth, depth_timestamp = freenect.sync_get_depth(format=freenect.DEPTH_11BIT)
+        time = pygame.time.get_ticks()
+        print time
 
         # Depth subtract (background should be farther than foreground objects,
         # so we subtract depth from backdepth)
@@ -125,7 +141,11 @@ if __name__ == '__main__':
 
         # Select only those points which actually lie in the square
         valid_inds = (ptst[0] > -1) & (ptst[0] < 1) & (ptst[1] > -1) & (ptst[1] < 1)
+        sa = pygame.surfarray.pixels2d(surf)
         if not valid_inds.any():
+            updateColors(time, times, sa)
+            del sa
+            pygame.display.flip()
             # No indices to paint...
             continue
         ptst = ptst[..., valid_inds] # pick out only the points with valid indices
@@ -135,8 +155,9 @@ if __name__ == '__main__':
         indy = ((ptst[1] + 1) * (h-1)/2).astype(int)
 
         # Paint the whiteboard
-        sa = pygame.surfarray.pixels2d(surf)
-        sa[indx, indy] = 0xff00ff00
+        updateColors(time, times, sa)
+        sa[indx, indy] = BASE_COLOR
+        times[indx, indy] = time
         del sa
         pygame.display.flip()
 
