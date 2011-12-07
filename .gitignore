@@ -6,3 +6,5 @@ build
 *.mode2v3
 xcuserdata
 project.xcworkspace
+*.pyc
+.DS_Store
