@@ -29,19 +29,31 @@ def warpmatrix(pts):
     b = [0,0,0,0,0,0,0,0,1]
     return np.reshape(np.linalg.solve(A,b), (3,3))
 
-BASE_COLOR = 0x00ff00
+GREEN = 0x00ff00
+RED = 0xff0000
+BLUE = 0x0000ff
+CUR_COLOR = GREEN
+CUR_STR = "g"
 # Refresh the colors to continue the fading process
-def updateColors(time, times, sa):
+def updateColors(time, times, sa, colors):
         # Choose their color based on how long they've been on the board
-        timeDiff = time - times
-        colors = (BASE_COLOR - timeDiff) & 0x00ff00
+        timeDiff = (time - times) / 1000
+        rvals = colors == "r"
+        gvals = colors == "g"
+        bvals = colors == "b"
+        cols = 255 - timeDiff
         # Fill in the new colors 
-        positives = (times > 0) & (BASE_COLOR > timeDiff)
-        sa[positives] = colors[positives].astype(np.int32)
-        sa[positives == False] = 0
-        times[positives == False] = 0
-        del positives
-
+        sa[rvals & (255 > timeDiff)] = cols[rvals & (255 > timeDiff)] * (256 * 256)
+        sa[gvals & (255 > timeDiff)] = cols[gvals & (255 > timeDiff)] * 256
+        sa[bvals & (255 > timeDiff)] = cols[bvals & (255 > timeDiff)]
+        sa[255 <= timeDiff] = 0
+        times[255 <= timeDiff] = 0
+        colors[255 <= timeDiff] = "n"
+        del rvals
+        del gvals
+        del bvals
+        del cols
+        del timeDiff
 def depth11_cvt(depth):
     return ((depth >> 3) * 0x01010100 + 0xff)
 
@@ -87,6 +99,7 @@ if __name__ == '__main__':
     surf = pygame.display.set_mode((0, 0), pygame.DOUBLEBUF | pygame.FULLSCREEN)
     w, h = surf.get_size()
     times = np.zeros( (w, h), dtype=np.int32 )
+    colors = np.array( [ [ "n" for j in xrange(h)] for i in xrange(w)] )
 
     clock = pygame.time.Clock()
     running = True
@@ -104,8 +117,8 @@ if __name__ == '__main__':
             if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.unicode == u'q'):
                 running = False
             elif event.type == pygame.KEYDOWN:
-                if event.unicode == u'r':
-                    # Recalibrate
+                if event.unicode == u'c':
+                    # Calibrate
                     backdepth = get_backdepth()
                 elif event.key == pygame.K_BACKSPACE:
                     # Clear screen
@@ -114,13 +127,21 @@ if __name__ == '__main__':
                     angle = set_kinect_angle(angle + 2)
                 elif event.unicode == u'z':
                     angle = set_kinect_angle(angle - 2)
+                elif event.unicode == u'r':
+                    CUR_COLOR = RED
+                    CUR_STR = "r"
+                elif event.unicode == u'g':
+                    CUR_COLOR = GREEN
+                    CUR_STR = "g"
+                elif event.unicode == u'b':
+                    CUR_COLOR = BLUE
+                    CUR_STR = "b"
 
         # XXX This is atypically complex code because of the extreme use of NumPy operations.
 
         # Grab a depth image
         depth, depth_timestamp = freenect.sync_get_depth(format=freenect.DEPTH_11BIT)
         time = pygame.time.get_ticks()
-        print time
 
         # Depth subtract (background should be farther than foreground objects,
         # so we subtract depth from backdepth)
@@ -143,7 +164,7 @@ if __name__ == '__main__':
         valid_inds = (ptst[0] > -1) & (ptst[0] < 1) & (ptst[1] > -1) & (ptst[1] < 1)
         sa = pygame.surfarray.pixels2d(surf)
         if not valid_inds.any():
-            updateColors(time, times, sa)
+            updateColors(time, times, sa, colors)
             del sa
             pygame.display.flip()
             # No indices to paint...
@@ -159,9 +180,10 @@ if __name__ == '__main__':
         indy = ((ptst[1] + 1) * (h-1)/2).astype(int)
 
         # Paint the whiteboard
-        updateColors(time, times, sa)
-        sa[indx, indy] = BASE_COLOR
+        updateColors(time, times, sa, colors)
+        sa[indx, indy] = CUR_COLOR
         times[indx, indy] = time
+        colors[indx, indy] = CUR_STR
         del sa
         pygame.display.flip()
 
