@@ -67,7 +67,6 @@ if __name__ == '__main__':
     except IOError:
         print "Could not open whiteboard calibration; please run kinect_whiteboard_calib.py"
         exit(1)
-    
     warpmat = warpmatrix(points)
 
     pygame.init()
@@ -128,7 +127,11 @@ if __name__ == '__main__':
         if not valid_inds.any():
             # No indices to paint...
             continue
+
         ptst = ptst[..., valid_inds] # pick out only the points with valid indices
+
+        print "Valid drawing points"
+        print ptst
 
         # Convert [-1,1]*[-1,1] into window coords
         indx = ((ptst[0] + 1) * (w-1)/2).astype(int)
