@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """ Crude whiteboard calibration routine.
 
 The projected screen will turn green, then it will display the

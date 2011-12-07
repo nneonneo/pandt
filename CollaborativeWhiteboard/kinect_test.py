@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """ Simple test app to display the depth and video images from a Kinect """
 import pygame
 import freenect

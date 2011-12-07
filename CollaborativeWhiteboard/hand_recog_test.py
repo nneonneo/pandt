@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 #cv.NamedWindow('depth')
 #cv.NamedWindow('rgb')
 #

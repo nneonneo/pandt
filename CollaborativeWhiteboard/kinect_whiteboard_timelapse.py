@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 """ Crude whiteboard demo app.
 
 Uses background-subtraction to detect interaction. It is therefore not
